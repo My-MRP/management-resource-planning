@@ -1,5 +1,7 @@
-Django==2.0.5
+confusable-homoglyphs==3.1.1
+Django==1.11.13
 django-multiselectfield==0.1.8
+django-registration==2.4.1
 django-sass-processor==0.7
 djangorestframework==3.8.2
 factory-boy==2.11.1
