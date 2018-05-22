@@ -41,3 +41,9 @@ class AudioSound(models.Model):
     name =           models.CharField(max_length=50)
     description =    models.CharField(max_length=100)
     cost =           models.IntegerField()
+
+
+# # Direct SQL INJECTION
+# mustang = Vehicle(model_name="mustang", engine=Engine("v8", "clean cut", 19000), exterior_color=ExteriorColor("white", 2500),
+# wheels=Wheel("chrome", "shiny", 4000), interior_package=InteriorColor("default", 2000), audio_system=AudioSound("radio", "simple system", 1000))
+# mustang.save()
