@@ -45,11 +45,13 @@ def createGraph():
         fig = go.Figure(data=[trace], layout=layout)
 
         # Creates graph and saves it to the project.
+        print('----------------------------------------------')
         py.image.save_as(fig, filename='my_mrp/static/popular_models.png')
         py.image.ishow(fig)
     except:
         return False
     finally:
-        print('Finished Executing createGraph()')
+        print('[*] Finished Executing DB Queries.')
+        print('----------------------------------------------')
 
 createGraph()

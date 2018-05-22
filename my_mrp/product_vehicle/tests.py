@@ -17,33 +17,33 @@ class VehicleModelFactory(factory.django.DjangoModelFactory):
     mustang.save()
 
 class Engine(factory.django.DjangoModelFactory):
-    """docstring for ."""
+    """Creates Dummy Engine instance for testing."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
 
 class ExteriorColor(factory.django.DjangoModelFactory):
-    """docstring for ."""
+    """Creates Dummy ExteriorColor instance for testing."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
 
 
 class InteriorColor(factory.django.DjangoModelFactory):
-    """docstring for ."""
+    """Creates Dummy InteriorColor instance for testing."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
 
 class Wheel(factory.django.DjangoModelFactory):
-    """docstring for ."""
+    """Creates Dummy Wheel instance for testing."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
 
 
 class AudioSound(factory.django.DjangoModelFactory):
-    """docstring for ."""
+    """Creates Dummy AudioSound instance for testing."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
