@@ -3,11 +3,11 @@ from django.db import models
 # ADMIN: Create Vehicle
 class Vehicle(models.Model):
     model_name =        models.CharField(max_length=100, null=False)
-    engine =            models.ManyToManyField('Engine', related_name='vehicles', null=False)
-    exterior_color =    models.ManyToManyField('ExteriorColor', related_name='vehicles', null=False)
-    wheels =            models.ManyToManyField('Wheel', related_name='vehicles', null=False)
-    interior_package =  models.ManyToManyField('InteriorColor', related_name='vehicles', null=False)
-    audio_system =      models.ManyToManyField('AudioSound', related_name='vehicles', null=False)
+    engine =            models.ManyToManyField('Engine', related_name='vehicles')
+    exterior_color =    models.ManyToManyField('ExteriorColor', related_name='vehicles')
+    wheels =            models.ManyToManyField('Wheel', related_name='vehicles')
+    interior_package =  models.ManyToManyField('InteriorColor', related_name='vehicles')
+    audio_system =      models.ManyToManyField('AudioSound', related_name='vehicles')
 
 
 class Engine(models.Model):
