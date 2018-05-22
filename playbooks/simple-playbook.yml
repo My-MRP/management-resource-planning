@@ -28,8 +28,8 @@
     - name: Clone repo into Ubuntu
       git:
         repo: 'https://github.com/My-MRP/management-resource-planning.git'
-        version: deploy
         dest: /home/ubuntu/management-resource-planning
+        version: deploy
         clone: yes
         update: yes
 
