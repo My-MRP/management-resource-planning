@@ -1,3 +1,17 @@
 from django.test import TestCase
+import factory
 
-# Create your tests here.
+
+class VehicleModelFactory(factory.django.DjangoModelFactory):
+    """
+    Creates Vehicle Object using Admin preiveldges. POSTS to DATABASE for quoting
+    tool application.
+    """
+    mustang = Vehicle(
+                model_name="mustang", engine=Engine("v8", "clean cut", 19000),
+                exterior_color=ExteriorColor("white", 2500),
+                wheels=Wheel("chrome", "shiny", 4000),
+                interior_package=InteriorColor("default", 2000),
+                audio_system=AudioSound("radio", "simple system", 1000)
+            )
+    mustang.save()

@@ -34,6 +34,7 @@ class HomeView(TemplateView):
 def createGraph():
     # Sample Data
     sales = {'R8': 342, 'NSX': 210, 'GTR': 200, 'FORDGT': 300}
+
     try:
         # Uses Plotly's API
         plotly.tools.set_credentials_file(username='kiirb', api_key='agmRWX8PPQqHZKWmC5iF')
@@ -44,7 +45,7 @@ def createGraph():
         fig = go.Figure(data=[trace], layout=layout)
 
         # Creates graph and saves it to the project.
-        py.image.save_as(fig, filename='popular_models.png')
+        py.image.save_as(fig, filename='my_mrp/static/popular_models.png')
         py.image.ishow(fig)
     except:
         return False
