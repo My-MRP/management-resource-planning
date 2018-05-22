@@ -43,8 +43,6 @@
       pip:
         requirements: /home/ubuntu/management-resource-planning/requirements.txt
         virtualenv: /home/ubuntu/ENV
-      become: yes
-      become_method: sudo
 
     - name: mv Gunicorn config
       template:
