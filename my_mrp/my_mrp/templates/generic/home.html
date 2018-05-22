@@ -1,14 +1,22 @@
 {% extends 'generic/base.html' %}
 {% load static %}
 
-
-{% block content %}
-    {% if user.is_authenticated %}
-    <h1>Welcome back to My MRP {{ user.username }}</h1>
-    <h3>What woud you like to do today?</h3>
+<html>
+  <head>
+    <!-- <link href="../static/base.css" rel="stylesheet" type="text/css" /> -->
+  </head>
+  {% block content %}
+  {% if user.is_authenticated %}
+  <body>
+    <center>
+      <h1>Welcome to your dash {{ user.username }}</h1>
+      <h3>What woud you like to do today?</h3>
+    </center>
+  </body>
     {%else%}
     <h1>Welcome to My MRP!</h1>
     <h2>The site that allows you to configure your products and quoting tools.</h2>
     <p>If you are not a user <a href="{% url "registration_register" %}">create your account</a>.</br></br>If you are already a user please <a href="{% url "auth_login" %}">Signin</a>.</p>
     {% endif %}
+
 {% endblock %}

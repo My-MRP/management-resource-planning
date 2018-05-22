@@ -1,5 +1,7 @@
 """Define the My MRP home view."""
-
+import plotly
+import plotly.plotly as py
+import plotly.graph_objs as go
 from django.views.generic.base import TemplateView
 
 
@@ -26,3 +28,11 @@ class HomeView(TemplateView):
     #     })
 
     #     return context
+
+
+
+
+
+# Generates Graph for Data.
+def graphView():
+    pass
