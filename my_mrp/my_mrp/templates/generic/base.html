@@ -15,6 +15,12 @@
         <li><a href="{% url "home" %}">Home</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url "auth_logout" %}">Logout</a></li>
+        <li><a href="{% url "add_vehicle" %}">Vehicle</a></li>
+        <li><a href="{% url "add_engine" %}">engine</a></li>
+        <li><a href="{% url "add_exterior_color" %}">exter</a></li>
+        <li><a href="{% url "add_interior_color" %}">inter</a></li>
+        <li><a href="{% url "add_wheel" %}">wheel</a></li>
+        <li><a href="{% url "add_audio" %}">audio</a></li>
         {% else %}
         <li><a href="{% url "registration_register" %}">Signup</a></li>
         <li><a href="{% url "auth_login" %}">Signin</a></li>

@@ -16,33 +16,33 @@ class VehicleModelFactory(factory.django.DjangoModelFactory):
             )
     mustang.save()
 
-class Engine(object):
+class Engine(factory.django.DjangoModelFactory):
     """docstring for ."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
 
-class ExteriorColor(object):
-    """docstring for ."""
-    def __init__(self, arg):
-        super(, self).__init__()
-        self.arg = arg
-
-
-class InteriorColor(object):
-    """docstring for ."""
-    def __init__(self, arg):
-        super(, self).__init__()
-        self.arg = arg
-
-class Wheel(object):
+class ExteriorColor(factory.django.DjangoModelFactory):
     """docstring for ."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
 
 
-class AudioSound(object):
+class InteriorColor(factory.django.DjangoModelFactory):
+    """docstring for ."""
+    def __init__(self, arg):
+        super(, self).__init__()
+        self.arg = arg
+
+class Wheel(factory.django.DjangoModelFactory):
+    """docstring for ."""
+    def __init__(self, arg):
+        super(, self).__init__()
+        self.arg = arg
+
+
+class AudioSound(factory.django.DjangoModelFactory):
     """docstring for ."""
     def __init__(self, arg):
         super(, self).__init__()
