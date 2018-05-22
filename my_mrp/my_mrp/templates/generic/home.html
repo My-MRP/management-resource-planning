@@ -9,9 +9,9 @@
   {% if user.is_authenticated %}
   <body>
     <center>
-      <h1>Welcome to your dash {{ user.username }}</h1>
-      <h3>What woud you like to do today?</h3>
+      <h2>Welcome to your dashboard, {{ user.username }}</h2>
     </center>
+    <img style="float:right "src="{% static "popular_models.png" %}" height="350" width="500">
   </body>
     {%else%}
     <h1>Welcome to My MRP!</h1>

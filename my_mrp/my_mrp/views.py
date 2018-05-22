@@ -50,3 +50,5 @@ def createGraph():
         return False
     finally:
         print('Finished Executing createGraph()')
+
+createGraph()
