@@ -20,6 +20,6 @@ from .views import HomeView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
-    # path('accounts/', include('registration.backends.hmac.urls')),
+    path('accounts/', include('registration.backends.hmac.urls')),
 
 ]
