@@ -15,3 +15,35 @@ class VehicleModelFactory(factory.django.DjangoModelFactory):
                 audio_system=AudioSound("radio", "simple system", 1000)
             )
     mustang.save()
+
+class Engine(object):
+    """docstring for ."""
+    def __init__(self, arg):
+        super(, self).__init__()
+        self.arg = arg
+
+class ExteriorColor(object):
+    """docstring for ."""
+    def __init__(self, arg):
+        super(, self).__init__()
+        self.arg = arg
+
+
+class InteriorColor(object):
+    """docstring for ."""
+    def __init__(self, arg):
+        super(, self).__init__()
+        self.arg = arg
+
+class Wheel(object):
+    """docstring for ."""
+    def __init__(self, arg):
+        super(, self).__init__()
+        self.arg = arg
+
+
+class AudioSound(object):
+    """docstring for ."""
+    def __init__(self, arg):
+        super(, self).__init__()
+        self.arg = arg
