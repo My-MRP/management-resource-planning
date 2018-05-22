@@ -23,4 +23,3 @@ class VehicleQuote(ModelForm):
         self.fields['exterior'].queryset = Vehicle.objects.filter(model.'exterior')
         self.fields['wheels'].queryset = Vehicle.objects.filter(model.'wheels')
         self.fields['accessories'].queryset = Vehicle.objects.filter(model.'accessories')
-
