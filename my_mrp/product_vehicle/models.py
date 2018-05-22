@@ -4,7 +4,6 @@ from django.db import models
 # ADMIN: Create Vehicle
 class Vehicle(models.Model):
     """Allow Admin to create new vehicle type."""
-
     model_name =        models.CharField(max_length=100, null=False, unique=True)
     engine =            models.ManyToManyField('Engine', related_name='vehicles')
     exterior_color =    models.ManyToManyField('ExteriorColor', related_name='vehicles')
@@ -19,7 +18,6 @@ class Vehicle(models.Model):
 
 class Engine(models.Model):
     """Allow Admin to create new engine type."""
-
     name =           models.CharField(max_length=100)
     description =    models.CharField(max_length=100)
     cost =           models.IntegerField()
@@ -31,7 +29,6 @@ class Engine(models.Model):
 
 class ExteriorColor(models.Model):
     """Allow Admin to add new exterior color."""
-
     name =           models.CharField(max_length=50)
     cost =           models.IntegerField()
 
@@ -42,7 +39,6 @@ class ExteriorColor(models.Model):
 
 class InteriorColor(models.Model):
     """Allow Admin to create add new interior color."""
-
     name =           models.CharField(max_length=50)
     cost =           models.IntegerField()
 
@@ -53,7 +49,6 @@ class InteriorColor(models.Model):
 
 class Wheel(models.Model):
     """Allow Admin to create add new wheel to options."""
-
     name =           models.CharField(max_length=50)
     description =    models.CharField(max_length=100)
     cost =           models.IntegerField()
@@ -73,3 +68,9 @@ class AudioSound(models.Model):
     def __str__(self):
         """String."""
         return '{}'.format(self.name)
+
+
+# # Direct SQL INJECTION
+# mustang = Vehicle(model_name="mustang", engine=Engine("v8", "clean cut", 19000), exterior_color=ExteriorColor("white", 2500),
+# wheels=Wheel("chrome", "shiny", 4000), interior_package=InteriorColor("default", 2000), audio_system=AudioSound("radio", "simple system", 1000))
+# mustang.save()<<<<<<< HEAD
