@@ -1,7 +1,7 @@
 {% extends 'generic/base.html' %}
 
 {% block content %}
-<div class="vehicle-quote-form container">
+<div class="vehiclequote-form container">
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

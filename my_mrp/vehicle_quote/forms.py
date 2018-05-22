@@ -1,49 +1,38 @@
+from django.db import models
 from django.forms import ModelForm
-from .product_vehicle.models import Vehicle
+from django import forms
+from product_vehicle.models import Vehicle
+from .models import VehicleQuote
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class VehicleQuote(ModelForm):
+class VehicleQuoteForm(ModelForm, forms.Form):
     """Define the VehicleQuote form."""
 
     class Meta:
         """Meta data for VehicleQuote form."""
 
-        model = Vehicle
-        fields = ['Name', 'Model', 'Engine', 'Interior', 'Audio', 'Exterior', 'Wheels', 'Accessories', 'Date Created', 'Expiration Date']
+        model = VehicleQuote
+        fields = ['model_name', 'engine', 'exterior_color', 'wheels',
+                  'interior_package', 'audio_system']
 
     def __init__(self, *args, **kwargs):
         """Init for VehicleQuote form."""
         username = kwargs.pop('username')
-        model_name_choices = Vehicle.objects.all().values_list('model_name')
+        # import pdb; pdb.set_trace()
+        model_name_choices = Vehicle.objects.all()
 
         super().__init__(*args, **kwargs)
-        self.fields['Name'].queryset = forms.CharField(max_length=180, null=False)
-        self.fields['Model'].queryset = Vehicle.objects.filter('model_name')
-        self.fields['Engine'].queryset = Vehicle.objects.filter(model.'engine')
-        self.fields['Interior'].queryset = Vehicle.objects.filter(model.'interior')
-        self.fields['Audio'].queryset = Vehicle.objects.filter(model.'audio')
-        self.fields['Exterior'].queryset = Vehicle.objects.filter(model.'exterior')
-        self.fields['Wheels'].queryset = Vehicle.objects.filter(model.'wheels')
-        self.fields['Accessories'].queryset = Vehicle.objects.filter(model.'accessories')
-        self.fields['Date Created'].queryset = Vehicle.objects.filter(model.'accessories')
-        self.fields['Expiration Date'].queryset = Vehicle.objects.filter(model.'accessories')
+        self.fields['model_name'] = forms.MultipleChoiceField(required=True, widget=forms.CheckboxSelectMultiple, choices=model_name_choices)
+        # self.fields['Engine'].queryset = Vehicle.objects.filter(model.'engine')
+        # self.fields['Interior'].queryset = Vehicle.objects.filter(model.'interior')
+        # self.fields['Audio'].queryset = Vehicle.objects.filter(model.'audio')
+        # self.fields['Exterior'].queryset = Vehicle.objects.filter(model.'exterior')
+        # self.fields['Wheels'].queryset = Vehicle.objects.filter(model.'wheels')
+        # self.fields['Accessories'].queryset = Vehicle.objects.filter(model.'accessories')
+        # self.fields['Date Created'].queryset = Vehicle.objects.filter(model.'accessories')
+        # self.fields['Expiration Date'].queryset = Vehicle.objects.filter(model.'accessories')
 
-model_name_choices = Vehicle.objects.all().values_list('model_name')
-engine_choices = Vehicle.objects.filter(model_name=Model).values_list('engine', flat=True)
-
-
-
-Name
-Model = forms.MultipleChoiceField(choices=model_name_choices)
-Engine = forms.MultipleChoiceField(choices=model_name_choices)
-Interior = forms.MultipleChoiceField(choices=model_name_choices)
-Audio = forms.MultipleChoiceField(choices=model_name_choices)
-Exterior = forms.MultipleChoiceField(choices=model_name_choices)
-Wheels = forms.MultipleChoiceField(choices=model_name_choices)
-Accessories = forms.MultipleChoiceField(choices=model_name_choices)
-Date Created
-Expiration Date'
 
 
 
@@ -56,10 +45,10 @@ Expiration Date'
 
 # class SimpleForm(forms.Form):
 #     birth_year = forms.DateField(widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES))
-#     favorite_colors = forms.MultipleChoiceField(
-#         required=False,
+#     model_name = forms.MultipleChoiceField(
+#         required=true,
 #         widget=forms.CheckboxSelectMultiple,
-#         choices=FAVORITE_COLORS_CHOICES,
+#         choices=model_name_choices,
 #     )
 
 # User.objects.all().values('username')

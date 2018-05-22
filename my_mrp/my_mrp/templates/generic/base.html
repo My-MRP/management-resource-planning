@@ -14,6 +14,7 @@
       <ul id="main_nav">
         <li><a href="{% url "home" %}">Home</a></li>
         {% if user.is_authenticated %}
+        <li><a href="{% url "quote_list" %}">My Quotes</a></li>
         <li><a href="{% url "auth_logout" %}">Logout</a></li>
         {% else %}
         <li><a href="{% url "registration_register" %}">Signup</a></li>
