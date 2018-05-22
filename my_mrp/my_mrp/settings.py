@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1xnl0#ujnjyvi822dv81scaf-tjkrw&_=b5g$x^d1kq0s#8jco'
-DB_NAME = 'vehicles'
+DB_NAME = 'Vehicles'
 DB_HOST = 'localhost'
 DB_USER = ''
 DB_PASSWORD = ''
