@@ -6,9 +6,16 @@
     {% if user.is_authenticated %}
     <h1>Welcome back to My MRP {{ user.username }}</h1>
     <h3>What woud you like to do today?</h3>
+    <ul>
+        <li><a href="{% url "quote" %}">Create a new quote.</a></li>
+        <li>Update or Edit and existing quote:</li>
+    {% for quote in quotes %}
+        <li><a href="{% url "quote_detail" id=quote.id %}">{{ quote_name }}</a></li>
+    {% endfor %}
+    </ul>
     {%else%}
     <h1>Welcome to My MRP!</h1>
     <h2>The site that allows you to configure your products and quoting tools.</h2>
-    <p>If you are not a user, <a href="{% url "registration_register" %}">Create your account</a> now.</br></br>If you are already a user please <a href="{% url "auth_login" %}">Signin</a>.</p>
+    <p>If you are not a user <a href="{% url "registration_register" %}">create your account</a>.</br></br>If you are already a user please <a href="{% url "auth_login" %}">Signin</a>.</p>
     {% endif %}
 {% endblock %}
