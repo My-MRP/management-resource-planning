@@ -1,38 +1,43 @@
 from django.db import models
 
-
-# Create your models here.
+# ADMIN: Create Vehicle
 class Vehicle(models.Model):
-    engines = (
-        ('v6', '3.0-liter TFSI® turbocharged DOHC V6'),
-        ('v8', '3.4 Prestige 3.0 TFSI® supercharged v8'),
-        ('v10', '5.2-liter FSI® dual-injection V10'))
-
-    colors = (
-        ('white', 'Ibis White'),
-        ('black', 'Mythos Black metallic'),
-        ('blue', 'Ara Blue crystal'))
-
-    packages = (
-        ('default', 'Default'),
-        ('confort', 'Confortable cushioned seats.'),
-        ('premium', 'Premium Cocaine White Leather Seats'))
-
-    systems = (
-        ('sony', 'SONY Ultra Clear Sound System'),
-        ('bose', 'BOSE Ultra Premium Sound System'),
-        ('hk', 'Harmen Kardon Infinite Sound System'))
-
     model_name =        models.CharField(max_length=100, null=False)
-    trim_engine =       models.CharField(max_length=2, choices=engines)
-    exterior_color =    models.CharField(max_length=5, choices=colors)
-    wheels =            models.CharField(max_length=10, choices=colors)
-    interior_package =  models.CharField(max_length=10, choices=packages)
-    audio_system =      models.CharField(max_length=15, choices=systems)
-    bike_rack =         models.BooleanField(default=False)
+    engine =            models.ManyToManyField('Engine', related_name='vehicles', null=False)
+    exterior_color =    models.ManyToManyField('ExteriorColor', related_name='vehicles', null=False)
+    wheels =            models.ManyToManyField('Wheel', related_name='vehicles', null=False)
+    interior_package =  models.ManyToManyField('InteriorColor', related_name='vehicles', null=False)
+    audio_system =      models.ManyToManyField('AudioSound', related_name='vehicles', null=False)
 
 
 class Engine(models.Model):
-    engine_name =
-    engine_description =  '3.4 Prestige 3.0 TFSI® supercharged v8'
-    engine_cost =
+    """Allows Admin to create new engine type."""
+    name =           models.CharField(max_length=100)
+    description =    models.CharField(max_length=100)
+    cost =           models.IntegerField()
+
+
+class ExteriorColor(models.Model):
+    """Allows Admin to add new exterior color."""
+    name =           models.CharField(max_length=50)
+    cost =           models.IntegerField()
+
+
+class InteriorColor(models.Model):
+    """Allows Admin to create add new interior color."""
+    name =           models.CharField(max_length=50)
+    cost =           models.IntegerField()
+
+
+class Wheel(models.Model):
+    """Allows Admin to create add new wheel to options."""
+    name =           models.CharField(max_length=50)
+    description =    models.CharField(max_length=100)
+    cost =           models.IntegerField()
+
+
+class AudioSound(models.Model):
+    """Allows Admin to create add new audio system."""
+    name =           models.CharField(max_length=50)
+    description =    models.CharField(max_length=100)
+    cost =           models.IntegerField()
