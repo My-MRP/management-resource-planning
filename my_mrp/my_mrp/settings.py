@@ -27,9 +27,7 @@ DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'my_mrp',
+    'product_vehicle',
 ]
 
 MIDDLEWARE = [
@@ -70,10 +69,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'my_mrp.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -83,8 +80,8 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST', ''),
         'PORT': 5432,
         'TEST': {
-            'NAME': 'mymrp_test'
-        }
+            'NAME': 'mymrp_test',
+        },
     }
 }
 
