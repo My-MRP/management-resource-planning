@@ -41,7 +41,7 @@ def createGraph():
         trace = go.Pie(labels=list(sales.keys()), values=list(sales.values()))
 
         # GRAPH DIMENSION.
-        layout = go.Layout(title='Most popular Models', width=800, height=640)
+        layout = go.Layout(title='Most popular Models', width=800, height=640, paper_bgcolor='rgb(27, 32, 46)')
         fig = go.Figure(data=[trace], layout=layout)
 
         # Creates graph and saves it to the project.
@@ -52,4 +52,4 @@ def createGraph():
     finally:
         print('Finished Executing createGraph()')
 
-# createGraph()
+createGraph()

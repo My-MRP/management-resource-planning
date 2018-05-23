@@ -19,3 +19,38 @@
 .login-form form [type="submit"] {
     margin-left: 155px;
 }
+
+#pie-chart {
+    position: absolute;
+    right: 40px;
+}
+
+#list {
+    position: absolute;
+    top: 500px;
+    left: 225px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
+    border: none;
+}
+
+#list a {
+    color: rgb(52, 156, 134);
+}
+
+#create {
+    position: absolute;
+    top: 500px;
+    right: 166px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: rgb(52, 156, 134);
+    border: none;
+}
+
+#create a {
+    color: rgb(27, 32, 46);
+}
