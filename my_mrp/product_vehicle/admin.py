@@ -1,7 +1,9 @@
+"""Register your models here."""
+
 from django.contrib import admin
 from .models import Vehicle, Engine, ExteriorColor, InteriorColor, Wheel, AudioSound
 
-# Register your models here.
+"""Register your models here."""
 admin.site.register(Vehicle)
 admin.site.register(Engine)
 admin.site.register(ExteriorColor)

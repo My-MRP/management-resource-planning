@@ -1,0 +1,15 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+<section class="quote-list-container container">
+    <h2><a href="{% url "select_model" %}">Create a new quote</a></h2>
+    <h2>Your Quotes</h2>
+    {% for quote in quotes %}
+    <p>Name: {{ quote.name }}</p>
+    <p>Model: {{ quote.model_name }}</p>
+    <p>Date Created: {{ quote.date_created }}</p>
+    <a href="{% url "quote_detail" id=quote.id %}">View Quote Detail</a>
+    </br>
+    {% endfor %}
+</section>
+{% endblock content %}
