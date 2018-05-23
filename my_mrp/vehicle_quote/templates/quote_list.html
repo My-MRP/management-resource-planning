@@ -1,8 +1,8 @@
 {% extends "generic/base.html" %}
+{% load static %}
 
 {% block content %}
 <section class="quote-list-container container">
-    <h2><a href="{% url "select_model" %}">Create a new quote</a></h2>
     <h2>Your Quotes</h2>
     {% for quote in quotes %}
     <p>Name: {{ quote.name }}</p>

@@ -1,0 +1,44 @@
+.nav-bar {
+    background-color: black;
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 100px;
+    font-family: 'Titan One', cursive;
+    color: rgb(102, 231, 203);
+}
+
+#main_nav {
+    position: absolute;
+    top: 2px; right: 20px;
+    color: aquamarine;
+}
+
+#anon-welcome {
+    position: absolute;
+    top: 32px;
+    right: 11%;
+}
+
+#welcome {
+    position: absolute;
+    top: 32px;
+    left: 11%;
+    font-family: 'Permanent Marker', cursive;
+    color: aliceblue;
+}
+.left-box {
+    background-color: rgb(137, 219, 201);
+    position: absolute;
+    top: 100px; left: 1%;
+    width: 49%;
+    height: 1200px;  
+}
+
+.right-box {
+    background-color: rgb(34, 34, 39);
+    position: absolute;
+    top: 100px; right:1%;
+    width: 49%;
+    height: 1200px;
+}
