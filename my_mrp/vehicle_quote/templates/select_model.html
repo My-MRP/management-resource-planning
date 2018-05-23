@@ -5,8 +5,8 @@
     <h2><a href="{% url "select_model" %}">Create a new quote</a></h2>
     <h2>Car Models</h2>
     {% for model_name in model_names %}
-    <p>{{ model_name }}</p>
-    <a href="{% url "vehicle_quote" model_name=model_name %}">Quote this Car</a>
+    <p>{{ model_name.model_name }}</p>
+    <a href="{% url "vehicle_quote" id=model_name.id %}">Quote this Car</a>
     </br>
     {% endfor %}
 </section>

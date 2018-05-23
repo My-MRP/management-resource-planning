@@ -6,32 +6,34 @@ from .models import VehicleQuote
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class VehicleQuoteForm(ModelForm, forms.Form):
+class VehicleQuoteForm(ModelForm):
     """Define the VehicleQuote form."""
 
     class Meta:
         """Meta data for VehicleQuote form."""
 
         model = VehicleQuote
-        fields = ['model_name', 'engine', 'exterior_color', 'wheels',
-                  'interior_package', 'audio_system']
+        fields = ['name', 'engine', 'interior_package', 'audio_system', 'exterior_color', 'wheels']
+        # widgets = {
+        #     'engine': 	ModelMultipleChoiceField(attrs={'cols': 80, 'rows': 20}),
+        # }
 
     def __init__(self, *args, **kwargs):
         """Init for VehicleQuote form."""
-        username = kwargs.pop('username')
+        user = kwargs.pop('username')
+        model_name = Vehicle.objects.filter(id=str(kwargs.pop('id'))).first()
+        # widgets = {
+        #     'name': Textarea(attrs={'cols': 80, 'rows': 20}),
+        # }
         # import pdb; pdb.set_trace()
-        model_name_choices = Vehicle.objects.all()
 
         super().__init__(*args, **kwargs)
-        self.fields['model_name'] = forms.MultipleChoiceField(required=True, widget=forms.CheckboxSelectMultiple, choices=model_name_choices)
-        # self.fields['Engine'].queryset = Vehicle.objects.filter(model.'engine')
-        # self.fields['Interior'].queryset = Vehicle.objects.filter(model.'interior')
-        # self.fields['Audio'].queryset = Vehicle.objects.filter(model.'audio')
-        # self.fields['Exterior'].queryset = Vehicle.objects.filter(model.'exterior')
-        # self.fields['Wheels'].queryset = Vehicle.objects.filter(model.'wheels')
-        # self.fields['Accessories'].queryset = Vehicle.objects.filter(model.'accessories')
-        # self.fields['Date Created'].queryset = Vehicle.objects.filter(model.'accessories')
-        # self.fields['Expiration Date'].queryset = Vehicle.objects.filter(model.'accessories')
+        
+        self.fields['engine'].queryset = model_name.engine.all()
+        self.fields['interior_package'].queryset = model_name.interior_package.all()
+        self.fields['audio_system'].queryset = model_name.audio_system.all()
+        self.fields['exterior_color'].queryset = model_name.exterior_color.all()
+        self.fields['wheels'].queryset = model_name.wheels.all()
 
 
 

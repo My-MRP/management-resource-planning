@@ -56,7 +56,6 @@ class SelectModelName(ListView):
         """Filter the context for display."""
         context = super().get_context_data(**kwargs)
         model_names = context['model_names']
-
         context.update({
             'model_names': model_names,
         })
@@ -76,11 +75,13 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
         """Get the username."""
         kwargs = super().get_form_kwargs()
         kwargs.update({'username': self.request.user.username})
+        kwargs.update({'id': self.kwargs['id']})
         return kwargs
-    
+
     def form_valid(self, form):
         """Add the user to the quote."""
         form.instance.user = self.request.user
+        form.instance.model_name = Vehicle.objects.filter(id=str(self.kwargs['id'])).first()
         return super().form_valid(form)
 
 
