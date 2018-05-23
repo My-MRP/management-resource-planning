@@ -4,6 +4,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.views.generic import UpdateView
+from django.http import HttpResponseRedirect
 from .models import VehicleQuote
 from product_vehicle.models import Vehicle
 from .forms import VehicleQuoteForm
@@ -68,7 +69,7 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
 
     model = VehicleQuote
     form_class = VehicleQuoteForm
-    success_url = reverse_lazy('quote_list')
+    success_url = reverse_lazy('quote_review')
     login_url = reverse_lazy('auth_login')
 
     def get_form_kwargs(self):
@@ -81,6 +82,7 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         """Add the user to the quote."""
         form.instance.user = self.request.user
+        # import pdb; pdb.set_trace()
         form.instance.model_name = Vehicle.objects.filter(id=str(self.kwargs['id'])).first()
         return super().form_valid(form)
 

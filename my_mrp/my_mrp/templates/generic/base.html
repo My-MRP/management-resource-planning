@@ -23,7 +23,6 @@
         <li><a href="{% url "add_wheel" %}">wheel</a></li>
         <li><a href="{% url "add_audio" %}">audio</a></li>
         {% else %}
-        <li><a href="{% url "registration_register" %}">Signup</a></li>
         <li><a href="{% url "auth_login" %}">Signin</a></li>
         {% endif %}
       </ul>
