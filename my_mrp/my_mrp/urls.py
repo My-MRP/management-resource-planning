@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
     path('accounts/', include('registration.backends.hmac.urls')),
+    path('sales/', include('vehicle_quote.urls')),
     path('vehicles/', include('product_vehicle.urls')),
 ]

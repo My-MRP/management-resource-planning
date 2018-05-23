@@ -1,25 +1,60 @@
+from django.db import models
 from django.forms import ModelForm
-from .product_vehicle.models import Vehicle
+from django import forms
+from product_vehicle.models import Vehicle
+from .models import VehicleQuote
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class VehicleQuote(ModelForm):
+class VehicleQuoteForm(ModelForm):
     """Define the VehicleQuote form."""
 
     class Meta:
-        """Meta data for album form."""
+        """Meta data for VehicleQuote form."""
 
-        model = Vehicle
-        fields = ['name', 'model', 'engine', 'interior', 'audio', 'exterior', 'wheels', 'accessories']
+        model = VehicleQuote
+        fields = ['name', 'engine', 'interior_package', 'audio_system', 'exterior_color', 'wheels']
+        # widgets = {
+        #     'engine': 	ModelMultipleChoiceField(attrs={'cols': 80, 'rows': 20}),
+        # }
 
     def __init__(self, *args, **kwargs):
-        """Init for album form."""
-        username = kwargs.pop('username')
+        """Init for VehicleQuote form."""
+        user = kwargs.pop('username')
+        model_name = Vehicle.objects.filter(id=str(kwargs.pop('id'))).first()
+        # widgets = {
+        #     'name': Textarea(attrs={'cols': 80, 'rows': 20}),
+        # }
+        # import pdb; pdb.set_trace()
+
         super().__init__(*args, **kwargs)
-        self.fields['name'].queryset = forms.CharField(max_length=180, null=False)
-        self.fields['model'].queryset = Vehicle.objects.filter('model_name')
-        self.fields['engine'].queryset = Vehicle.objects.filter(model.'engine')
-        self.fields['interior'].queryset = Vehicle.objects.filter(model.'interior')
-        self.fields['audio'].queryset = Vehicle.objects.filter(model.'audio')
-        self.fields['exterior'].queryset = Vehicle.objects.filter(model.'exterior')
-        self.fields['wheels'].queryset = Vehicle.objects.filter(model.'wheels')
-        self.fields['accessories'].queryset = Vehicle.objects.filter(model.'accessories')
+        
+        self.fields['engine'].queryset = model_name.engine.all()
+        self.fields['interior_package'].queryset = model_name.interior_package.all()
+        self.fields['audio_system'].queryset = model_name.audio_system.all()
+        self.fields['exterior_color'].queryset = model_name.exterior_color.all()
+        self.fields['wheels'].queryset = model_name.wheels.all()
+
+
+
+
+# BIRTH_YEAR_CHOICES = ('1980', '1981', '1982')
+# FAVORITE_COLORS_CHOICES = (
+#     ('blue', 'Blue'),
+#     ('green', 'Green'),
+#     ('black', 'Black'),
+# )
+
+# class SimpleForm(forms.Form):
+#     birth_year = forms.DateField(widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES))
+#     model_name = forms.MultipleChoiceField(
+#         required=true,
+#         widget=forms.CheckboxSelectMultiple,
+#         choices=model_name_choices,
+#     )
+
+# User.objects.all().values('username')
+# >>> [{'username': u'u1'}, {'username': u'u2'}]
+
+# >>> User.objects.all().values_list('username')
+# >>> [(u'u1',), (u'u2',)]

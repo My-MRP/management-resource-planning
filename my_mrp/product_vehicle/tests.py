@@ -12,7 +12,7 @@ class Engine(factory.django.DjangoModelFactory):
 
     name = factory.Faker('name')
     description = 'v8 full injection tailored for an aggressive driver.'
-    cost = random.randint(7000,50000)
+    cost = random.randint(7000, 50000)
 
 
 class ExteriorColor(factory.django.DjangoModelFactory):
@@ -21,7 +21,7 @@ class ExteriorColor(factory.django.DjangoModelFactory):
         model = ExteriorColor
 
     name = factory.Faker('name')
-    cost = random.randint(7000,50000)
+    cost = random.randint(7000, 50000)
 
 
 class InteriorColor(factory.django.DjangoModelFactory):
@@ -30,7 +30,7 @@ class InteriorColor(factory.django.DjangoModelFactory):
         model = InteriorColor
 
     name = factory.Faker('name')
-    cost = random.randint(7000,50000)
+    cost = random.randint(7000, 50000)
 
 class Wheel(factory.django.DjangoModelFactory):
     """Creates Dummy Wheel instance for testing."""
@@ -39,7 +39,7 @@ class Wheel(factory.django.DjangoModelFactory):
 
     name = factory.Faker('name')
     description = 'Chrome with a silver finish.'
-    cost = random.randint(7000,50000)
+    cost = random.randint(7000, 50000)
 
 
 class AudioSound(factory.django.DjangoModelFactory):
@@ -48,8 +48,8 @@ class AudioSound(factory.django.DjangoModelFactory):
         model = AudioSound
 
     name = factory.Faker('name')
-    description = 'some sound.'
-    cost = random.randint(7000,50000)
+    description = 'Clear sound.'
+    cost = random.randint(7000, 50000)
 
 
 # FAKER GENERATED INSTANCE
