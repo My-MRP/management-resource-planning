@@ -1,0 +1,14 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+<section class="quote-container container">
+    <h2>Quote</h2>
+    {% for item in new_quote.all %}
+    <p>title: {{ new_quote.title }}</p>
+    <p>description: {{ new_quote.description }}</p>
+    <p>date created: {{ new_quote.date_created }}</p>
+    <p>date modified: {{ new_quote.date_modified }}</p>
+    <p>date published: {{ new_quote.date_published }}</p>
+    {% endfor %}
+</section>
+{% endblock content %}

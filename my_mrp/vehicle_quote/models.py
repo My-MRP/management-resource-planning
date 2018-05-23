@@ -16,6 +16,8 @@ class VehicleQuote(models.Model):
     wheels = models.ManyToManyField(Wheel, related_name='vehicle_quotes')
     interior_package = models.ManyToManyField(InteriorColor, related_name='vehicle_quotes')
     audio_system = models.ManyToManyField(AudioSound, related_name='vehicle_quotes')
+    cost = models.IntegerField()
+    list_price = 
     date_created = models.DateField(auto_now_add=True, null=False)
     date_modified = models.DateField(auto_now=True)
 
