@@ -88,7 +88,7 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
 class QuoteDetailView(LoginRequiredMixin, DetailView):
     """Define the quote view class."""
 
-    template_name = 'vehicle_quote/quote_view.html'
+    template_name = 'vehicle_quote/quote_detail.html'
     model = VehicleQuote
     context_object_name = 'this_quote'
     pk_url_kwarg = 'id'

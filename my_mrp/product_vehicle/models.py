@@ -10,6 +10,7 @@ class Vehicle(models.Model):
     wheels =            models.ManyToManyField('Wheel', related_name='vehicles')
     interior_package =  models.ManyToManyField('InteriorColor', related_name='vehicles')
     audio_system =      models.ManyToManyField('AudioSound', related_name='vehicles')
+    cost =              models.IntegerField(null=False)
 
     def __str__(self):
         """String."""

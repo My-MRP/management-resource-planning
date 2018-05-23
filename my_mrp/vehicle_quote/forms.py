@@ -1,6 +1,5 @@
 from django.db import models
-from django.forms import ModelForm
-from django import forms
+from django.forms import ModelForm, ModelChoiceField
 from product_vehicle.models import Vehicle
 from .models import VehicleQuote
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -14,9 +13,13 @@ class VehicleQuoteForm(ModelForm):
 
         model = VehicleQuote
         fields = ['name', 'engine', 'interior_package', 'audio_system', 'exterior_color', 'wheels']
-        # widgets = {
-        #     'engine': 	ModelMultipleChoiceField(attrs={'cols': 80, 'rows': 20}),
-        # }
+        widgets = {
+            'engine': ModelChoiceField,
+            'interior_package': ModelChoiceField,
+            'audio_system': ModelChoiceField,
+            'exterior_color': ModelChoiceField,
+            'wheels': ModelChoiceField,
+        }
 
     def __init__(self, *args, **kwargs):
         """Init for VehicleQuote form."""

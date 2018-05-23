@@ -9,7 +9,7 @@ class VehicleQuote(models.Model):
     """This is the Quote model."""
 
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='vehicle_quotes')
-    name = models.CharField(max_length=100, null=False)
+    name = models.CharField(max_length=100, null=False, unique=True)
     model_name = models.ForeignKey(Vehicle, on_delete=models.DO_NOTHING, related_name='vehicle_quotes', null=False)
     engine = models.ManyToManyField(Engine, related_name='vehicle_quotes')
     exterior_color = models.ManyToManyField(ExteriorColor, related_name='vehicle_quotes')
