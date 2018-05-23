@@ -81,6 +81,7 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         """Add the user to the quote."""
         form.instance.user = self.request.user
+        import pdb; pdb.set_trace()
         form.instance.model_name = Vehicle.objects.filter(id=str(self.kwargs['id'])).first()
         return super().form_valid(form)
 
