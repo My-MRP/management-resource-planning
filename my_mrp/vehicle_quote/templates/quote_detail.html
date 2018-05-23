@@ -1,19 +1,20 @@
 {% extends "generic/base.html" %}
-{% load thumbnail %}
-{% load i18n %}
 
 {% block content %}
-<section class="quote-container container">
-    <h2>Album</h2>
-    {% for photo in this_album.photos.all %}
-    {% thumbnail photo.image "100x100" crop="center" as im %}
-        <a href="{% url "photo_detail" id=photo.id %}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
-    {% endthumbnail %}
-    <p>title: {{ this_album.title }}</p>
-    <p>description: {{ this_album.description }}</p>
-    <p>date created: {{ this_album.date_created }}</p>
-    <p>date modified: {{ this_album.date_modified }}</p>
-    <p>date published: {{ this_album.date_published }}</p>
-    {% endfor %}
-</section>
+
+<h3>{{quote.name}}</h3>
+
+<ul id="details">
+  <li>Model: {{quote.model_name}}</li>
+  <li>Engine: {{quote.engine}}</li>
+  <li>Exterior Color: {{quote.exterior_color}}</li>
+  <li>Interior Package: {{quote.interior_color}}</li>
+  <li>Wheels: {{quote.wheels}}</li>
+  <li>Audio System: {{quote.audio_system}}</li>
+  <li>Manufacture Cost: {{quote.manufacture_cost}}</li>
+  <li>Quoted Sell Price: {{quote.quoted_price}}</li>
+  <li>Date Created: {{quote.date_created}}</li>
+  <li>Date Modified: {{quote.date_modified}}</li>
+</ul>
+
 {% endblock content %}

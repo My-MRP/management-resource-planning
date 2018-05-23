@@ -69,7 +69,7 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
 
     model = VehicleQuote
     form_class = VehicleQuoteForm
-    success_url = reverse_lazy('quote_review')
+    success_url = reverse_lazy('quote_list')
     login_url = reverse_lazy('auth_login')
 
     def get_form_kwargs(self):
@@ -82,33 +82,54 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         """Add the user to the quote."""
         form.instance.user = self.request.user
-        # import pdb; pdb.set_trace()
-        form.instance.model_name = Vehicle.objects.filter(id=str(self.kwargs['id'])).first()
+        form.instance.model_name = Vehicle.objects.filter(id=self.kwargs['id']).first()
         return super().form_valid(form)
 
 
 class QuoteDetailView(LoginRequiredMixin, DetailView):
     """Define the quote view class."""
 
-    template_name = 'vehicle_quote/quote_view.html'
-    model = VehicleQuote
-    context_object_name = 'this_quote'
-    pk_url_kwarg = 'id'
+    template_name = 'quote_detail.html'
+    context_object_name = 'quote'
     login_url = reverse_lazy('auth_login')
 
+    def get_object(self):
+        """."""
+        car = VehicleQuote.objects.filter(id=self.kwargs['id']).first()
+        if not car.quoted_price and not car.manufacture_cost:
+            car.manufacture_cost = (
+                car.engine.first().cost +
+                car.exterior_color.first().cost +
+                car.interior_package.first().cost +
+                car.wheels.first().cost +
+                car.audio_system.first().cost +
+                car.model_name.body_cost
+            )
+            car.quoted_price = (
+                car.manufacture_cost *
+                car.model_name.markup_multiplier
+            )
+            car.save()
+        return car
 
-class QuoteEditView(LoginRequiredMixin, UpdateView):
-    """Define the quote edit view."""
+    def get_context_data(self, **kwargs):
+        """Get context."""
+        context = super().get_context_data(**kwargs)
+        return context
 
-    template_name = 'vehicle_quote/quote_edit.html'
-    model = VehicleQuote
-    form_class = VehicleQuoteForm
-    login_url = reverse_lazy('auth_login')
-    success_url = reverse_lazy('library')
-    pk_url_kwarg = 'id'
 
-    def get_form_kwargs(self):
-        """Get the form data that is submitted by the quote to update the quote."""
-        kwargs = super().get_form_kwargs()
-        kwargs.update({'username': self.request.user.username})
-        return kwargs
+# class QuoteEditView(LoginRequiredMixin, UpdateView):
+#     """Define the quote edit view."""
+
+#     template_name = 'vehicle_quote/quote_edit.html'
+#     model = VehicleQuote
+#     form_class = VehicleQuoteForm
+#     login_url = reverse_lazy('auth_login')
+#     success_url = reverse_lazy('library')
+#     pk_url_kwarg = 'id'
+
+#     def get_form_kwargs(self):
+#         """Get the form data that is submitted by the quote to update the quote."""
+#         kwargs = super().get_form_kwargs()
+#         kwargs.update({'username': self.request.user.username})
+#         return kwargs

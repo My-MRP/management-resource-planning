@@ -7,14 +7,18 @@ from django.db import models
 class Vehicle(models.Model):
     """Allow Admin to create new vehicle type."""
 
-    model_name =        models.CharField(max_length=100, null=False, unique=True)
-    engine =            models.ManyToManyField('Engine', related_name='vehicles')
-    exterior_color =    models.ManyToManyField('ExteriorColor', related_name='vehicles')
-    wheels =            models.ManyToManyField('Wheel', related_name='vehicles')
-    interior_package =  models.ManyToManyField('InteriorColor', related_name='vehicles')
-    audio_system =      models.ManyToManyField('AudioSound', related_name='vehicles')
-    cost =              models.IntegerField(null=False)
-    multiplier =        models.IntegerField(null=False)
+    model_name = models.CharField(max_length=100, null=False, unique=True)
+    engine = models.ManyToManyField('Engine', related_name='vehicles')
+    exterior_color = models.ManyToManyField(
+        'ExteriorColor', related_name='vehicles', null=False)
+    wheels = models.ManyToManyField(
+        'Wheel', related_name='vehicles', null=False)
+    interior_package = models.ManyToManyField(
+        'InteriorColor', related_name='vehicles', null=False)
+    audio_system = models.ManyToManyField(
+        'AudioSound', related_name='vehicles', null=False)
+    body_cost = models.FloatField(null=False)
+    markup_multiplier = models.FloatField(null=False)
 
     def __str__(self):
         """String."""
@@ -24,9 +28,9 @@ class Vehicle(models.Model):
 class Engine(models.Model):
     """Allow Admin to create new engine type."""
 
-    name =           models.CharField(max_length=100)
-    description =    models.CharField(max_length=100)
-    cost =           models.IntegerField()
+    name = models.CharField(max_length=100, null=False)
+    description = models.CharField(max_length=100, null=False)
+    cost = models.FloatField(null=False)
 
     def __str__(self):
         """String."""
@@ -36,8 +40,8 @@ class Engine(models.Model):
 class ExteriorColor(models.Model):
     """Allow Admin to add new exterior color."""
 
-    name =           models.CharField(max_length=50)
-    cost =           models.IntegerField()
+    name = models.CharField(max_length=50, null=False)
+    cost = models.FloatField(null=False)
 
     def __str__(self):
         """String."""
@@ -47,8 +51,8 @@ class ExteriorColor(models.Model):
 class InteriorColor(models.Model):
     """Allow Admin to create add new interior color."""
 
-    name =           models.CharField(max_length=50)
-    cost =           models.IntegerField()
+    name = models.CharField(max_length=50, null=False)
+    cost = models.FloatField(null=False)
 
     def __str__(self):
         """String."""
@@ -58,9 +62,9 @@ class InteriorColor(models.Model):
 class Wheel(models.Model):
     """Allow Admin to create add new wheel to options."""
 
-    name =           models.CharField(max_length=50)
-    description =    models.CharField(max_length=100)
-    cost =           models.IntegerField()
+    name = models.CharField(max_length=50, null=False)
+    description = models.CharField(max_length=100, null=False)
+    cost = models.FloatField(null=False)
 
     def __str__(self):
         """String."""
@@ -70,9 +74,9 @@ class Wheel(models.Model):
 class AudioSound(models.Model):
     """Allow Admin to create add new audio system."""
 
-    name =           models.CharField(max_length=50)
-    description =    models.CharField(max_length=100)
-    cost =           models.IntegerField()
+    name = models.CharField(max_length=50, null=False)
+    description = models.CharField(max_length=100, null=False)
+    cost = models.FloatField(null=False)
 
     def __str__(self):
         """String."""
