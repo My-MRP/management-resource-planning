@@ -9,7 +9,7 @@ class AddVehicleForm(ModelForm):
         """Meta."""
 
         model = Vehicle
-        fields = ['model_name', 'engine', 'exterior_color', 'wheels', 'interior_package', 'audio_system']
+        fields = ['model_name', 'engine', 'exterior_color', 'wheels', 'interior_package', 'audio_system', 'body_cost', 'markup_multiplier']
 
     def __init__(self, *args, **kwargs):
         """Init."""
