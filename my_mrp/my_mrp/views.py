@@ -33,7 +33,10 @@ class HomeView(TemplateView):
 # Generates Graph based on Data.
 def createGraph():
     # Sample Data
+    # for every model
+    # give it a color
     sales = {'R8': 342, 'NSX': 210, 'GTR': 200, 'FORDGT': 300}
+    colors = {''}
 
     try:
         # Uses Plotly's API
@@ -41,7 +44,7 @@ def createGraph():
         trace = go.Pie(labels=list(sales.keys()), values=list(sales.values()))
 
         # GRAPH DIMENSION.
-        layout = go.Layout(title='Most popular Models', width=800, height=640)
+        layout = go.Layout(title='Most popular Models', width=800, height=640, paper_bgcolor='transparent')
         fig = go.Figure(data=[trace], layout=layout)
 
         # Creates graph and saves it to the project.
