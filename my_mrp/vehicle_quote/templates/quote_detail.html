@@ -1,14 +1,8 @@
 {% extends "generic/base.html" %}
-{% load thumbnail %}
-{% load i18n %}
 
 {% block content %}
 <section class="quote-container container">
-    <h2>Album</h2>
-    {% for photo in this_album.photos.all %}
-    {% thumbnail photo.image "100x100" crop="center" as im %}
-        <a href="{% url "photo_detail" id=photo.id %}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
-    {% endthumbnail %}
+    <h2>{{ this_quote.name }}</h2>
     <p>title: {{ this_album.title }}</p>
     <p>description: {{ this_album.description }}</p>
     <p>date created: {{ this_album.date_created }}</p>
