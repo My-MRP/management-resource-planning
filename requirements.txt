@@ -7,7 +7,10 @@ djangorestframework==3.8.2
 factory-boy==2.11.1
 Faker==0.8.15
 psycopg2==2.7.4
+plotly==2.6.0
 python-dateutil==2.7.3
 pytz==2018.4
 six==1.11.0
 text-unidecode==1.2
+ipython==6.4.0
+ipython-genutils==0.2.0
