@@ -1,0 +1,13 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+
+<div class="interior-add container">
+  <h2>Add New Interior Color</h2>
+  <form class="interior-add-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Color</button>
+  </form>
+</div>
+{% endblock content %}
