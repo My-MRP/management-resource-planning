@@ -1,3 +1,10 @@
+.sky {
+    text-decoration: none;
+}
+.sky:link, .sky:visited {
+    color: white;
+}
+
 .nav-bar {
     background-color: black;
     position: absolute;
@@ -28,7 +35,7 @@
     color: aliceblue;
 }
 .left-box {
-    background-color: rgb(137, 219, 201);
+    background-color: rgb(121, 223, 201);
     position: absolute;
     top: 100px; left: 1%;
     width: 49%;
@@ -36,7 +43,7 @@
 }
 
 .right-box {
-    background-color: rgb(34, 34, 39);
+    background-color: rgb(255, 255, 255);
     position: absolute;
     top: 100px; right:1%;
     width: 49%;

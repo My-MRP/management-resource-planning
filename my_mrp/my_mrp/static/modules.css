@@ -1,0 +1,21 @@
+.login-form {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    padding: 10px;
+    border: 1px solid aqua;
+    border-radius: 5%;
+    background-color: rgb(74, 141, 119)
+}
+
+.login-form p {
+    margin: 10px;
+}
+
+#id_password {
+    margin-left: 4px;
+}
+
+.login-form form [type="submit"] {
+    margin-left: 155px;
+}
