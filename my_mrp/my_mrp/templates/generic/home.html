@@ -16,5 +16,8 @@
     {%else%}
     <h1 id="anon-welcome">Welcome to My MRP!</h1>
     {% endif %}
+    <footer>
+      <button id="about_us_button"><a href="{% url "about_us" %}"> Meet the DEV Team </a></button>
+    </footer>
 
-{% endblock %}
+  {% endblock %}
