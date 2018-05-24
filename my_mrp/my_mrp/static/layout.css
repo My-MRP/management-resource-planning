@@ -1,0 +1,65 @@
+.sky {
+    text-decoration: none;
+}
+.sky:link, .sky:visited {
+    color: white;
+}
+
+.nav-bar {
+    background-color: black;
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 100px;
+    font-family: 'Titan One', cursive;
+    color: rgb(102, 231, 203);
+}
+
+.nav-bar img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 80px;
+}
+
+#main-title {
+    font-family: 'Boogaloo', cursive;
+    color: rgb(73, 205, 223);
+    position: absolute;
+    left: 60px;
+    top: 10px;
+}
+#main_nav {
+    position: absolute;
+    top: 2px; right: 20px;
+    color: aquamarine;
+}
+
+#anon-welcome {
+    position: absolute;
+    top: 32px;
+    right: 11%;
+}
+
+#welcome {
+    position: absolute;
+    top: 44px;
+    left: 20%;
+    font-family: 'Permanent Marker', cursive;
+    color: aliceblue;
+}
+.left-box {
+    background-color: rgb(121, 223, 201);
+    position: absolute;
+    top: 100px; left: 1%;
+    width: 49%;
+    height: 1200px;  
+}
+
+.right-box {
+    background-color: rgb(27, 32, 46);
+    position: absolute;
+    top: 100px; right:1%;
+    width: 49%;
+    height: 1200px;
+}
