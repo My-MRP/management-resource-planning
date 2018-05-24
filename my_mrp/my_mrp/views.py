@@ -8,7 +8,10 @@ from vehicle_quote.models import VehicleQuote
 
 # Generates Graph based on Data.
 def createGraph():
+<<<<<<< HEAD
     """Creates Visual for most popular models quoted."""
+=======
+>>>>>>> 51cbe3932c54d751a68361bccf0ca9d1d74ad861
     vehicles = {}
     colors = {}
     car_models = VehicleQuote.objects.all()
