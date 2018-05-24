@@ -53,3 +53,9 @@ def createGraph():
         print('Finished Executing createGraph()')
 
 # createGraph()
+
+
+class ComponentView(TemplateView):
+    """."""
+
+    template_name = 'generic/component.html'
