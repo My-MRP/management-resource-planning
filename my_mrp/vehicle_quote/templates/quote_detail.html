@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-
-<h3>{{quote.name}}</h3>
-
-<ul id="details">
-  <li>Model: {{quote.model_name}}</li>
-  <li>Engine: {{quote.engine}}</li>
-  <li>Exterior Color: {{quote.exterior_color}}</li>
-  <li>Interior Package: {{quote.interior_color}}</li>
-  <li>Wheels: {{quote.wheels}}</li>
-  <li>Audio System: {{quote.audio_system}}</li>
-  <li>Manufacture Cost: {{quote.manufacture_cost}}</li>
-  <li>Quoted Sell Price: {{quote.quoted_price}}</li>
-  <li>Date Created: {{quote.date_created}}</li>
-  <li>Date Modified: {{quote.date_modified}}</li>
-</ul>
+<div id="details-container">
+  <h1 id="details-name">Quote Name:  {{quote.name}}</h1>
+  <ul class="quote-details">
+    <li id="details-model">Model: {{quote.model_name}}</li>
+    <li id="details-engine">Engine: {{quote.engine}}</li>
+    <li id="details-ext">Exterior Color: {{quote.exterior_color}}</li>
+    <li id="details-int">Interior Package: {{quote.interior_color}}</li>
+    <li id="details-wheels">Wheels: {{quote.wheels}}</li>
+    <li id="details-audio">Audio System: {{quote.audio_system}}</li>
+    <li id="details-cost">Manufacture Cost: {{quote.manufacture_cost}}</li>
+    <li id="details-sell">Quoted Sell Price: {{quote.quoted_price}}</li>
+    <li id="details-create">Date Created: {{quote.date_created}}</li>
+    <li id="details-mod">Date Modified: {{quote.date_modified}}</li>
+  </ul>
+</div>
 
 {% endblock content %}
