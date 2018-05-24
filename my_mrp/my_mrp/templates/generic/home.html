@@ -1,20 +1,20 @@
 {% extends 'generic/base.html' %}
 {% load static %}
 
-<html>
-  <head>
-    <link href="../static/base.css" rel="stylesheet" type="text/css" />
-  </head>
   {% block content %}
   {% if user.is_authenticated %}
   <body>
-    <center>
-      <h2>Welcome to your dashboard, {{ user.username }}</h2>
-    </center>
-    <img style="float:right "src="{% static "popular_models.png" %}" height="350" width="500">
+    <h1 id="welcome">Welcome to your dashboard, {{ user.username }}</h1>
+    <div class="left-box">
+        <button id="list"><a href="{% url "quote_list" %}">My Quotes</a></button>
+    </div>
+    <div class="right-box">
+    <button id="create"><a href="{% url "select_model" %}">Create a New Quote</a></button>
+    <img id="pie-chart" src="{% static "popular_models.png" %}" height="350" width="500">
+    </div>
   </body>
     {%else%}
-    <h1>Welcome to My MRP!</h1>
+    <h1 id="anon-welcome">Welcome to My MRP!</h1>
     {% endif %}
 
 {% endblock %}

@@ -3,6 +3,7 @@ import plotly
 import plotly.plotly as py
 import plotly.graph_objs as go
 from django.views.generic.base import TemplateView
+from vehicle_quote.models import VehicleQuote
 
 
 class HomeView(TemplateView):
@@ -32,29 +33,36 @@ class HomeView(TemplateView):
 
 # Generates Graph based on Data.
 def createGraph():
-    # Sample Data
-    # for every model
-    # give it a color
-    sales = {'R8': 342, 'NSX': 210, 'GTR': 200, 'FORDGT': 300}
-    colors = {''}
-
+    vehicles = {}
+    colors = {}
+    car_models = VehicleQuote.objects.all()
+    for car in [model.model_name.model_name for model in car_models]:
+        if car not in vehicles:
+                vehicles[car] = 1
+        else:
+            vehicles[car] += 1
     try:
         # Uses Plotly's API
-        plotly.tools.set_credentials_file(username='kiirb', api_key='agmRWX8PPQqHZKWmC5iF')
-        trace = go.Pie(labels=list(sales.keys()), values=list(sales.values()))
+        plotly.tools.set_credentials_file(username='kiirby', api_key='TdfP7ccHINP4BI76EDNj')
 
+        trace = go.Pie(labels=list(vehicles.keys()), values=list(vehicles.values()))
         # GRAPH DIMENSION.
-        layout = go.Layout(title='Most popular Models', width=800, height=640, paper_bgcolor='transparent')
-        fig = go.Figure(data=[trace], layout=layout)
+        layout = go.Layout(title='Most popular Models', width=800, height=640, paper_bgcolor='rgb(27, 32, 46)')
+        graph = go.Figure(data=[trace], layout=layout)
 
         # Creates graph and saves it to the project.
         print('----------------------------------------------')
-        py.image.save_as(fig, filename='my_mrp/static/popular_models.png')
-        py.image.ishow(fig)
+        print(graph)
+        py.image.save_as(graph, filename='my_mrp/static/popular_models.png')
+        print(graph)
+
+        py.image.ishow(graph)
+
     except:
         return False
+        print('[!] FATAL ERROR')
     finally:
-        print('[*] Finished Executing DB Queries.')
+        print('[*] Finished Executing PLOTLY/DB Queries.')
         print('----------------------------------------------')
 
 createGraph()

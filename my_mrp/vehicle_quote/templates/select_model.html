@@ -1,12 +1,11 @@
 {% extends "generic/base.html" %}
+{% load static %}
 
 {% block content %}
-<section class="select-model-container container">
-    <h2><a href="{% url "select_model" %}">Create a new quote</a></h2>
-    <h2>Car Models</h2>
+<section class="select-model container">
+    <h1 id="select-title">Select a Car Model to quote</h1>
     {% for model_name in model_names %}
-    <p>{{ model_name.model_name }}</p>
-    <a href="{% url "vehicle_quote" id=model_name.id %}">Quote this Car</a>
+    <button class="model-link"><a href="{% url "vehicle_quote" id=model_name.id %}">{{ model_name.model_name }}</a></button>
     </br>
     {% endfor %}
 </section>

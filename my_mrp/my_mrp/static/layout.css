@@ -1,0 +1,82 @@
+.sky {
+    text-decoration: none;
+}
+.sky:link, .sky:visited {
+    color: rgb(52, 156, 134);
+}
+
+.nav-bar {
+    background-color: black;
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 100px;
+    font-family: 'Boogaloo', cursive;
+    color: rgb(102, 231, 203);
+}
+
+.nav-bar img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 80px;
+}
+
+.nav-bar li {
+    margin-bottom: 4px;
+}
+
+#main-title {
+    font-family: 'Boogaloo', cursive;
+    color: rgb(73, 205, 223);
+    position: absolute;
+    left: 60px;
+    top: 10px;
+}
+
+#main-title-l {
+    font-family: 'Boogaloo', cursive;
+    color: rgb(73, 205, 223);
+    position: absolute;
+    left: 83px;
+    top: 42px;
+}
+
+#main_nav {
+    position: absolute;
+    top: 12px; right: 40px;
+    color: aquamarine;
+    font-size: 30px;
+}
+
+#anon-welcome {
+    position: absolute;
+    top: 45px;
+    right: 44%;
+    font-family: 'Boogaloo', cursive;
+    color: rgb(52, 156, 134);
+}
+
+#welcome {
+    position: absolute;
+    top: 32px;
+    left: 20%;
+    font-family: 'Boogaloo', cursive;
+    font-size: 40px;
+    color: rgb(52, 156, 134);
+}
+.left-box {
+    background-color: rgb(52, 156, 134);
+    position: absolute;
+    top: 100px; left: 1%;
+    width: 49%;
+    height: 1200px;  
+}
+
+.right-box {
+    background-color: rgb(27, 32, 46);
+    position: absolute;
+    top: 100px; right:1%;
+    width: 49%;
+    height: 1200px;
+}

@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static "reset.css" %}" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Boogaloo|Fira+Sans+Extra+Condensed|Permanent+Marker|Titan+One" rel="stylesheet">
+  <link href="{% static "base.css" %}" rel="stylesheet" type="text/css" />
+  <link href="{% static "layout.css" %}" rel="stylesheet" type="text/css" />
+  <link href="{% static "modules.css" %}" rel="stylesheet" type="text/css" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>MyMRP</title>
 </head>
 <body>
   <header>
-    <nav>
-      <h1 id="main-title">My MRP</h1>
+    <nav class="nav-bar">
+      <img id="logo" src="{% static "logo1.png" %}" alt="logo">
+      <h1 id="main-title">My</h1>
+      <h1 id="main-title-l">MRP</h1>
       <ul id="main_nav">
-        <li><a href="{% url "home" %}">Home</a></li>
+        <li><a class="sky" href="{% url "home" %}">Home</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url "quote_list" %}">My Quotes</a></li>
-        <li><a href="{% url "auth_logout" %}">Logout</a></li>
-        <li><a href="{% url "add_vehicle" %}">Vehicle</a></li>
-        <li><a href="{% url "add_engine" %}">engine</a></li>
-        <li><a href="{% url "add_exterior_color" %}">exter</a></li>
-        <li><a href="{% url "add_interior_color" %}">inter</a></li>
-        <li><a href="{% url "add_wheel" %}">wheel</a></li>
-        <li><a href="{% url "add_audio" %}">audio</a></li>
+        <li><a class="sky" href="{% url "auth_logout" %}">Logout</a></li>
         {% else %}
-        <li><a href="{% url "auth_login" %}">Signin</a></li>
+        <li><a class="sky" href="{% url "auth_login" %}">Signin</a></li>
         {% endif %}
       </ul>
     </nav>
