@@ -35,12 +35,12 @@ Install the application requirements with pip.
 Create a Postgres database for use with this application.
 Export environmental variables pointing to the location of database, your username, hashed password, and secret key
 
-(ENV) export SECRET_KEY=''
-(ENV) export DB_NAME=''
-(ENV) export DB_USER=''
-(ENV) export DB_PASS=''
-(ENV) export DB_HOST=''
-(ENV) export DEBUG='True'
+- (ENV) export SECRET_KEY=''
+- (ENV) export DB_NAME=''
+- (ENV) export DB_USER=''
+- (ENV) export DB_PASS=''
+- (ENV) export DB_HOST=''
+- (ENV) export DEBUG='True'
 
 Initialize the database with the migrate command from manage.py
 Once the package is installed and the database is created, start the server with the runserver command from manage.py
@@ -59,7 +59,7 @@ Built with Python and Django framework.
 Additional packages required are Plotly, Ansible, and Coveralls.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-Logo designed by Vexels https://www.vexels.com/vectors/preview/139518/3d-piechart-graph
+- This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+- Logo designed by Vexels https://www.vexels.com/vectors/preview/139518/3d-piechart-graph
 
 Change Log

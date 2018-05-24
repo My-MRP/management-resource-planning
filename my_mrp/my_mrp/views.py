@@ -3,6 +3,8 @@ import plotly
 import plotly.plotly as py
 import plotly.graph_objs as go
 from django.views.generic.base import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect
 
 
 class HomeView(TemplateView):
@@ -43,7 +45,13 @@ def createGraph():
 createGraph()
 
 
-class ComponentView(TemplateView):
+class ComponentView(LoginRequiredMixin, TemplateView):
     """Make the component view class where the user can select the type of component they want to add."""
 
     template_name = 'generic/component.html'
+
+    def get(self, request):
+        """Verify the user is a superuser."""
+        if not self.request.user.is_superuser:
+            return redirect('home')
+        return {}
