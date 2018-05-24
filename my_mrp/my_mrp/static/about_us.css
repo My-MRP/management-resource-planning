@@ -1,0 +1,108 @@
+html {
+    height: 100%;
+  }
+  
+  .us {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(6, 247, 38) linear-gradient(to bottom right, rgb(45, 90, 236), rgb(197, 196, 143));
+    font-family: 'Encode Sans Expanded', sans-serif;
+    background-attachment: fixed;
+  }
+  
+  #about-us {
+    margin-top: 1%;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+  }
+  
+  #container {
+    text-align: center;
+    max-width: 100%;
+    margin: 0px auto;
+  }
+  section {
+    margin: 20px;
+  }
+  
+  #section1 {
+    position: static;
+    display: inline-block;
+  }
+  #section2 {
+    display: inline-block;
+  }
+  #section3 {
+    display: inline-block;
+  }
+  #section4 {
+    display: inline-block;
+  }
+  .card-container {
+    cursor: pointer;
+    height: 400px;
+    perspective: 600px;
+    width: 400px;
+  }
+  .card {
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    width: 100%;
+  }
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .card .side {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+  }
+  .card .back {
+    background: rgba(0,0,0, .7);
+    color: White;
+    line-height: 23px;
+    text-align: center;
+    transform: rotateY(180deg);
+    filter: grayscale(0%);
+    font-size: 15px;
+    padding-top: 20px;
+  }
+  
+  .about_img {
+    max-width: 90%;
+    height: 90%;
+    border-radius: 25px;
+    }
+  
+  .contact-infromation {
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  
+  a:link {
+    color:  #ffe400;
+  }
+  
+  a:visited {
+    color: #ffe400;
+  }
+  
+  .links {
+   line-height: 12px;
+   padding-bottom:2px;
+  }
+  
+  .about_a {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
