@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-# Create your views here.
 class AddVehicleView(LoginRequiredMixin, CreateView):
     """Add new vehicle."""
 
