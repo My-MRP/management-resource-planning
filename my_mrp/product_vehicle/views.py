@@ -13,7 +13,7 @@ class AddVehicleView(LoginRequiredMixin, CreateView):
     template_name = 'vehicle/add_vehicle.html'
     model = Vehicle
     form_class = AddVehicleForm
-    success = reverse_lazy('quote_list')
+    success_url = reverse_lazy('select_model')
     login_url = reverse_lazy('auth_login')
 
     def form_valid(self, form):
@@ -28,7 +28,7 @@ class AddEngineView(LoginRequiredMixin, CreateView):
     template_name = 'components/add_engine.html'
     model = Engine
     fields = ['name', 'description', 'cost']
-    success_url = reverse_lazy('add_vehicle')
+    success_url = reverse_lazy('component')
     login_url = reverse_lazy('auth_login')
 
     def form_valid(self, form):
@@ -43,7 +43,7 @@ class AddExteriorColorView(LoginRequiredMixin, CreateView):
     template_name = 'components/add_exterior.html'
     model = ExteriorColor
     fields = ['name', 'cost']
-    success_url = reverse_lazy('add_vehicle')
+    success_url = reverse_lazy('component')
     login_url = reverse_lazy('auth_login')
 
     def form_valid(self, form):
@@ -58,7 +58,7 @@ class AddWheelView(LoginRequiredMixin, CreateView):
     template_name = 'components/add_wheel.html'
     model = Wheel
     fields = ['name', 'description', 'cost']
-    success_url = reverse_lazy('add_vehicle')
+    success_url = reverse_lazy('component')
     login_url = reverse_lazy('auth_login')
 
     def form_valid(self, form):
@@ -73,7 +73,7 @@ class AddInteriorColorView(LoginRequiredMixin, CreateView):
     template_name = 'components/add_interior.html'
     model = InteriorColor
     fields = ['name', 'cost']
-    success_url = reverse_lazy('add_vehicle')
+    success_url = reverse_lazy('component')
     login_url = reverse_lazy('auth_login')
 
     def form_valid(self, form):
@@ -88,7 +88,7 @@ class AddAudioView(LoginRequiredMixin, CreateView):
     template_name = 'components/add_audio.html'
     model = AudioSound
     fields = ['name', 'description', 'cost']
-    success_url = reverse_lazy('add_vehicle')
+    success_url = reverse_lazy('component')
     login_url = reverse_lazy('auth_login')
 
     def form_valid(self, form):
