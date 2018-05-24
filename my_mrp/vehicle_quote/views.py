@@ -37,7 +37,7 @@ class QuoteListView(LoginRequiredMixin, ListView):
         return context
 
 
-class SelectModelName(ListView):
+class SelectModelName(LoginRequiredMixin, ListView):
     """Get the model names to create a quote."""
 
     template_name = 'select_model.html'

@@ -1,17 +1,16 @@
 """Define the My MRP home and about_us views, make the charts and graphs for the dashboard."""
 import plotly
-import plotly.plotly as py
-import plotly.graph_objs as go
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.base import TemplateView
 from vehicle_quote.models import VehicleQuote
+from django.shortcuts import redirect
+import plotly.graph_objs as go
+import plotly.plotly as py
 
 
 # Generates Graph based on Data.
 def createGraph():
-<<<<<<< HEAD
     """Creates Visual for most popular models quoted."""
-=======
->>>>>>> 51cbe3932c54d751a68361bccf0ca9d1d74ad861
     vehicles = {}
     colors = {}
     car_models = VehicleQuote.objects.all()
@@ -61,6 +60,12 @@ class AboutUsView(TemplateView):
     template_name = 'generic/about_us.html'
 
 
-class ComponentView(TemplateView):
+class ComponentView(LoginRequiredMixin, TemplateView):
     """Make the component view class where the user can select the type of component they want to add."""
     template_name = 'generic/component.html'
+
+    def get(self, request):
+        """Verify the user is a superuser."""
+        if not self.request.user.is_superuser:
+            return redirect('home')
+        return {}
