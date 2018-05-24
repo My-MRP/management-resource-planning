@@ -2,13 +2,13 @@
 {% load static %}
 
   {% block content %}
-  {% if user.is_authenticated %}
-  <ul>
-    <li><a class="sky" href="{% url "add_engine" %}">Create New Engine</a></li>
-    <li><a class="sky" href="{% url "add_exterior_color" %}">Create New Exterior Color</a></li>
-    <li><a class="sky" href="{% url "add_interior_color" %}">Create New Interior Package</a></li>
-    <li><a class="sky" href="{% url "add_wheel" %}">Create New Wheel</a></li>
-    <li><a class="sky" href="{% url "add_audio" %}">Create New Audio System</a></li>
+  {% if user.is_superuser %}
+  <ul class="comp-add">
+      <li><button class="comp-link"><a class="sky" href="{% url "add_engine" %}">Create New Engine</a></button></li>
+      <li><button class="comp-link"><a class="sky" href="{% url "add_exterior_color" %}">Create New Exterior Color</a></button></li>
+      <li><button class="comp-link"><a class="sky" href="{% url "add_interior_color" %}">Create New Interior Package</a></button></li>
+      <li><button class="comp-link"><a class="sky" href="{% url "add_wheel" %}">Create New Wheel</a></button></li>
+      <li><button class="comp-link"><a class="sky" href="{% url "add_audio" %}">Create New Audio System</a></button></li>
   </ul>
   {% endif %}
 {% endblock %}

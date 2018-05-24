@@ -9,7 +9,7 @@ class HomeView(TemplateView):
     """Make the HomeView class."""
 
     template_name = 'generic/home.html'
-    # context_object_name = 'quotes'
+    context_object_name = 'quotes'
 
 
 class AboutUsView(TemplateView):

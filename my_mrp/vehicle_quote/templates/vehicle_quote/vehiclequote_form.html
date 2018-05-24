@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="vehiclequote-form container">
+<div class="django-form container">
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
