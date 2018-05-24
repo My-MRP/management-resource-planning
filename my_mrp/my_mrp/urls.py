@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import HomeView, ComponentView
+from .views import HomeView, AboutUsView, ComponentView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('registration.backends.hmac.urls')),
     path('sales/', include('vehicle_quote.urls')),
     path('vehicles/', include('product_vehicle.urls')),
+    path('about_us/', AboutUsView.as_view(), name='about_us'),
 ]
