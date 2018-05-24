@@ -59,7 +59,7 @@ steps
 
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
+Logo designed by Vexels https://www.vexels.com/vectors/preview/139518/3d-piechart-graph
 ## Acknowledgments
 
 * etc
