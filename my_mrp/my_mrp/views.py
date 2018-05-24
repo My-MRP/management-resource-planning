@@ -1,4 +1,4 @@
-"""Define the My MRP home view."""
+"""Define the My MRP home and about_us views, make the charts and graphs for the dashboard."""
 import plotly
 import plotly.plotly as py
 import plotly.graph_objs as go
@@ -45,10 +45,19 @@ def createGraph():
 
 
 class HomeView(TemplateView):
-    """Make the HomeView class."""
+    """Make the HomeView class for the initial landing page for signing in and the salesman dashboard after signing in."""
     template_name = 'generic/home.html'
     context_object_name = 'quotes'
-
     def get_context_data(self):
         createGraph()
         return {}
+
+
+class AboutUsView(TemplateView):
+    """Make the AboutUsView class where the pics, bios and links of the developers can be shown."""
+    template_name = 'generic/about_us.html'
+
+
+class ComponentView(TemplateView):
+    """Make the component view class where the user can select the type of component they want to add."""
+    template_name = 'generic/component.html'

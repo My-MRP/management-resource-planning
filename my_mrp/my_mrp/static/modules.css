@@ -43,9 +43,10 @@
     border-radius: 5px;
     background-color: rgb(27, 32, 46);
     border: none;
+    padding: 6px;
 }
 
-#list a {
+a {
     color: rgb(52, 156, 134);
 }
 
@@ -58,6 +59,7 @@
     border-radius: 5px;
     background-color: rgb(52, 156, 134);
     border: none;
+    padding: 6px;
 }
 
 #create a {
@@ -87,26 +89,22 @@
     margin-bottom: 20px;
 }
 
-.model-link a {
-    color: rgb(52, 156, 143);
-}
-
-.vehiclequote-form {
+.django-form {
     position: absolute;
     top: 120px;
     left: 142px;
     width: 17%;
 }
 
-.vehiclequote-form p {
+.django-form p {
     margin-bottom: 10px;
 }
 
-.vehiclequote-form label {
+.django-form label {
     font-size: 20px;
 }
 
-.vehiclequote-form select {
+.django-form select {
     height: 54px;
     width: 209px;
     background-color: rgb(23, 27, 26);
@@ -119,8 +117,8 @@
     border-radius: 5px;
 }
 
-.vehiclequote-form input {
-    height: 20px;
+.django-form input {
+    height: 25px;
     width: 200px;
     background-color: rgb(23, 27, 26);
     color: rgb(52, 156, 143);
@@ -132,8 +130,8 @@
     border-radius: 5px;
 }
 
-.vehiclequote-form input [type="submit"] {
-    height: 20px;
+.django-form button {
+    height: 25px;
     width: 200px;
     background-color: rgb(23, 27, 26);
     color: rgb(52, 156, 143);
@@ -146,17 +144,68 @@
 }
 
 .quote-list {
-    border: 1px solid red;
     position: absolute;
     top: 120px;
     left: 60px;
 }
 
 .quote-single {
-    border: 1px solid red;
     margin: 5px;
     padding: 5px;
     background-color: rgb(27, 32, 46);
     color: rgb(52, 156, 134);
     font-family: 'Fira Sans Extra Condensed', sans-serif;
+    border-radius: 5px;
+}
+
+.quote-single p {
+    margin-bottom: 4px;
+}
+
+#detail-button {
+    border: 1px solid white;
+    background-color: rgb(52, 156, 134);
+    color: rgb(27, 32, 46);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    margin: 7px;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+#details-container {
+    position: absolute;
+    top: 140px;
+    left: 20%;
+    background-color: rgb(27, 32, 46);
+    color: rgb(52, 156, 134);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#details-name {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quote-details li {
+    margin: 10px;
+    font-size: 25px;
+}
+
+.comp-add {
+    position: absolute;
+    top: 120px;
+    left: 170px;
+    color: rgb(23, 27, 26);
+}
+
+.comp-link {
+    margin-bottom: 15px;
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
+    border: none;
+    margin-bottom: 20px;
 }

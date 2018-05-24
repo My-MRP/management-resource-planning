@@ -1,22 +1,37 @@
-"""Define the models for the vehicle and parts."""
+"""Define the models for the vehicle and component parts."""
 
 from django.db import models
 
 
 # ADMIN: Create Vehicle
 class Vehicle(models.Model):
-    """Allow Admin to create new vehicle type."""
+    """Define the Veehicle model."""
 
-    model_name = models.CharField(max_length=100, null=False, unique=True)
-    engine = models.ManyToManyField('Engine', related_name='vehicles')
+    model_name = models.CharField(
+        max_length=100,
+        null=False,
+        unique=True,
+    )
+    engine = models.ManyToManyField(
+        'Engine',
+        related_name='vehicles',
+    )
     exterior_color = models.ManyToManyField(
-        'ExteriorColor', related_name='vehicles', null=False)
+        'ExteriorColor',
+        related_name='vehicles',
+    )
     wheels = models.ManyToManyField(
-        'Wheel', related_name='vehicles', null=False)
+        'Wheel',
+        related_name='vehicles',
+    )
     interior_package = models.ManyToManyField(
-        'InteriorColor', related_name='vehicles', null=False)
+        'InteriorColor',
+        related_name='vehicles',
+    )
     audio_system = models.ManyToManyField(
-        'AudioSound', related_name='vehicles', null=False)
+        'AudioSound',
+        related_name='vehicles',
+    )
     body_cost = models.FloatField(null=False)
     markup_multiplier = models.FloatField(null=False)
 

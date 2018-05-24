@@ -1,3 +1,5 @@
+"""Define the classes to add new vehicles and components."""
+
 from django.shortcuts import render
 from django.views.generic import CreateView
 from product_vehicle.models import Vehicle, Engine, ExteriorColor, InteriorColor, Wheel, AudioSound

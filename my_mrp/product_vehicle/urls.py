@@ -1,3 +1,5 @@
+"""Define the urls for the product_vehicle app."""
+
 from django.urls import path
 from .views import (
     AddVehicleView,
@@ -7,7 +9,6 @@ from .views import (
     AddInteriorColorView,
     AddWheelView,
 )
-
 
 urlpatterns = [
     path('vehicle/', AddVehicleView.as_view(), name='add_vehicle'),

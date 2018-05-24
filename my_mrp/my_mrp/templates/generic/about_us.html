@@ -1,0 +1,51 @@
+{% extends 'generic/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="about_us_page">
+<h1 class="us" id="about-us">The My MRP Team</h1>
+<div id="container">
+    <section id="section1">
+        <div class="card-container">
+            <div class="card">
+            <div class="side"><img class="about_img" src="{% static "austin.png" %}" alt="Austin"></div>
+            <div class="side back"><p>Hailing from the Emerald City of Angels that Never Sleeps, Austin is excited to bring the perspectives of three corners of the US of A together in the software development space.</br>He brings an eclectic nature, from hipster music tastes, to foreign films, to even tarot cards. Can you tell he has a background in theatre?</br></br>Hit him up to collaborate!</p>
+            <p class="contact-infromation">Contact Information</p> 
+            <a class="about_a" href="https://www.linkedin.com/in/austin-matteson/">LinkedIn</a>
+            <a class="about_a" href="https://github.com/austincmatteson">GitHub</a>
+            </div>
+            </div>
+        </div>
+    </section>
+        
+    <section id="section2">
+        <div class="card-container">
+        <div class="card">
+            <div class="side"><img class="about_img" src="{% static "george.png" %}" alt="George"></div>
+            <div class="side back"><p>George Ceja is a software developer. Just a few months ago he was a high school student leading the robotics club in an annual competition.</br>Now he is am a full-Stack Python developer building applications that are scalable for wide public use. Which he finds fascinating because it allows him to create applications that can shape and improve people's daily life.</p>
+            <p class="contact-infromation">Contact Information</p>
+            <p>net.george.sky@gmail.com</p>
+            <a class="about_a" href=https://www.linkedin.com/in/george-sky//>LinkedIn</a>
+            <a class="about_a" href="https://github.com/GeorgeCloud">GitHub</a>
+            </div>
+        </div>
+        </div>
+    </section>
+        
+    <section id="section3">
+    <div class="card-container">
+        <div class="card">
+        <div class="side"><img class="about_img" src="{% static "steve.jpg" %}" alt="Steve"></div>
+        <div class="side back"><p>Steve Starwalt is a Software Developer, Command Master Chief, and Manufacturer.</br>The power of technology has started a worldwide revolution that is changing people's lives in positive ways.<br> Putting the immense power of the internet into eveyone's hands is the force beghind this revolution and software developers are the people leading this revolution.</br>He wants to make tools to allow people to transform their lives and the world.</br>He also loves to spend time with his dogs and paraglide to relax."</p>
+            <p class="contact-infromation">Contact Information</p>
+            <p>s.r.starwalt@gmail.com</p>
+            <a class="about_a" href=https://www.linkedin.com/in/steven-starwalt//>LinkedIn</a>
+            <a class="about_a" href="https://github.com/steveflys">GitHub</a>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+</div>
+
+{% endblock content %}
