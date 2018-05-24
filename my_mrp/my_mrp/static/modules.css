@@ -4,12 +4,13 @@
     left: 40%;
     padding: 10px;
     border: 1px solid aqua;
-    border-radius: 5%;
-    background-color: rgb(74, 141, 119)
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
 }
 
 .login-form p {
     margin: 10px;
+    color: rgb(52, 156, 134)
 }
 
 #id_password {
@@ -27,10 +28,10 @@
 
 #logged-out {
     position: absolute;
-    top: 60px;
+    top: 42px;
     left: 40%;
     font-family: 'Boogaloo', cursive;
-    color: aliceblue;
+    color: rgb(52, 156, 134);
 }
 
 #list {
@@ -142,4 +143,20 @@
     text-align: center;
     border: 1px solid white;
     border-radius: 5px;
+}
+
+.quote-list {
+    border: 1px solid red;
+    position: absolute;
+    top: 120px;
+    left: 60px;
+}
+
+.quote-single {
+    border: 1px solid red;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(27, 32, 46);
+    color: rgb(52, 156, 134);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
 }

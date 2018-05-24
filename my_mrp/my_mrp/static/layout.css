@@ -2,7 +2,7 @@
     text-decoration: none;
 }
 .sky:link, .sky:visited {
-    color: white;
+    color: rgb(52, 156, 134);
 }
 
 .nav-bar {
@@ -53,6 +53,8 @@
     position: absolute;
     top: 45px;
     right: 44%;
+    font-family: 'Boogaloo', cursive;
+    color: rgb(52, 156, 134);
 }
 
 #welcome {
@@ -61,7 +63,7 @@
     left: 20%;
     font-family: 'Boogaloo', cursive;
     font-size: 40px;
-    color: aliceblue;
+    color: rgb(52, 156, 134);
 }
 .left-box {
     background-color: rgb(52, 156, 134);
