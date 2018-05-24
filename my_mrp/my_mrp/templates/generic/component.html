@@ -1,0 +1,14 @@
+{% extends 'generic/base.html' %}
+{% load static %}
+
+  {% block content %}
+  {% if user.is_authenticated %}
+  <ul>
+    <li><a class="sky" href="{% url "add_engine" %}">Create New Engine</a></li>
+    <li><a class="sky" href="{% url "add_exterior_color" %}">Create New Exterior Color</a></li>
+    <li><a class="sky" href="{% url "add_interior_color" %}">Create New Interior Package</a></li>
+    <li><a class="sky" href="{% url "add_wheel" %}">Create New Wheel</a></li>
+    <li><a class="sky" href="{% url "add_audio" %}">Create New Audio System</a></li>
+  </ul>
+  {% endif %}
+{% endblock %}
