@@ -34,27 +34,22 @@ class VehicleQuote(models.Model):
     engine = models.ManyToManyField(
         Engine,
         related_name='vehicle_quotes',
-        null=False,
     )
     exterior_color = models.ManyToManyField(
         ExteriorColor,
         related_name='vehicle_quotes',
-        null=False,
     )
     wheels = models.ManyToManyField(
         Wheel,
         related_name='vehicle_quotes',
-        null=False,
     )
     interior_package = models.ManyToManyField(
         InteriorColor,
         related_name='vehicle_quotes',
-        null=False,
     )
     audio_system = models.ManyToManyField(
         AudioSound,
         related_name='vehicle_quotes',
-        null=False,
     )
     quoted_price = models.FloatField(null=True)
     manufacture_cost = models.FloatField(null=True)
