@@ -13,7 +13,7 @@ class AddVehicleView(LoginRequiredMixin, CreateView):
     template_name = 'vehicle/add_vehicle.html'
     model = Vehicle
     form_class = AddVehicleForm
-    success = reverse_lazy('home')
+    success = reverse_lazy('quote_list')
     login_url = reverse_lazy('auth_login')
 
     def form_valid(self, form):
@@ -25,7 +25,7 @@ class AddVehicleView(LoginRequiredMixin, CreateView):
 class AddEngineView(LoginRequiredMixin, CreateView):
     """Add new engine."""
 
-    template_name = 'parts/add_engine.html'
+    template_name = 'components/add_engine.html'
     model = Engine
     fields = ['name', 'description', 'cost']
     success_url = reverse_lazy('add_vehicle')
@@ -40,7 +40,7 @@ class AddEngineView(LoginRequiredMixin, CreateView):
 class AddExteriorColorView(LoginRequiredMixin, CreateView):
     """Add new exterior color."""
 
-    template_name = 'parts/add_exterior.html'
+    template_name = 'components/add_exterior.html'
     model = ExteriorColor
     fields = ['name', 'cost']
     success_url = reverse_lazy('add_vehicle')
@@ -55,7 +55,7 @@ class AddExteriorColorView(LoginRequiredMixin, CreateView):
 class AddWheelView(LoginRequiredMixin, CreateView):
     """Add new wheel."""
 
-    template_name = 'parts/add_wheel.html'
+    template_name = 'components/add_wheel.html'
     model = Wheel
     fields = ['name', 'description', 'cost']
     success_url = reverse_lazy('add_vehicle')
@@ -70,7 +70,7 @@ class AddWheelView(LoginRequiredMixin, CreateView):
 class AddInteriorColorView(LoginRequiredMixin, CreateView):
     """Add new interior color."""
 
-    template_name = 'parts/add_interior.html'
+    template_name = 'components/add_interior.html'
     model = InteriorColor
     fields = ['name', 'cost']
     success_url = reverse_lazy('add_vehicle')
@@ -85,7 +85,7 @@ class AddInteriorColorView(LoginRequiredMixin, CreateView):
 class AddAudioView(LoginRequiredMixin, CreateView):
     """Add new audio system."""
 
-    template_name = 'parts/add_audio.html'
+    template_name = 'components/add_audio.html'
     model = AudioSound
     fields = ['name', 'description', 'cost']
     success_url = reverse_lazy('add_vehicle')

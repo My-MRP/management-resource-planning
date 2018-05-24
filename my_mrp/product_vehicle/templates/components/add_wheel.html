@@ -1,0 +1,13 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+
+<div class="wheel-add container">
+  <h2>Add New Wheel</h2>
+  <form class="wheel-add-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Wheel</button>
+  </form>
+</div>
+{% endblock content %}
