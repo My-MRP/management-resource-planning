@@ -1,7 +1,7 @@
 .login-form {
     position: absolute;
     top: 200px;
-    left: 30px;
+    left: 40%;
     padding: 10px;
     border: 1px solid aqua;
     border-radius: 5%;
@@ -23,6 +23,14 @@
 #pie-chart {
     position: absolute;
     right: 40px;
+}
+
+#logged-out {
+    position: absolute;
+    top: 60px;
+    left: 40%;
+    font-family: 'Boogaloo', cursive;
+    color: aliceblue;
 }
 
 #list {
@@ -53,4 +61,85 @@
 
 #create a {
     color: rgb(27, 32, 46);
+}
+
+.select-model {
+    position: absolute;
+    top: 120px;
+    left: 170px;
+    color: rgb(23, 27, 26);
+}
+
+#select-title {
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.model-link {
+    margin-bottom: 15px;
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.model-link a {
+    color: rgb(52, 156, 143);
+}
+
+.vehiclequote-form {
+    position: absolute;
+    top: 120px;
+    left: 142px;
+    width: 17%;
+}
+
+.vehiclequote-form p {
+    margin-bottom: 10px;
+}
+
+.vehiclequote-form label {
+    font-size: 20px;
+}
+
+.vehiclequote-form select {
+    height: 54px;
+    width: 209px;
+    background-color: rgb(23, 27, 26);
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 15px;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.vehiclequote-form input {
+    height: 20px;
+    width: 200px;
+    background-color: rgb(23, 27, 26);
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 15px;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.vehiclequote-form input [type="submit"] {
+    height: 20px;
+    width: 200px;
+    background-color: rgb(23, 27, 26);
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 15px;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
 }
