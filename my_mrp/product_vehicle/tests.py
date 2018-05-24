@@ -15,6 +15,7 @@ class Engine(factory.django.DjangoModelFactory):
     cost = random.randint(7000, 50000)
 
 
+
 class ExteriorColor(factory.django.DjangoModelFactory):
     """Creates Dummy ExteriorColor instance for testing."""
     class Meta:
@@ -31,6 +32,7 @@ class InteriorColor(factory.django.DjangoModelFactory):
 
     name = factory.Faker('name')
     cost = random.randint(7000, 50000)
+
 
 class Wheel(factory.django.DjangoModelFactory):
     """Creates Dummy Wheel instance for testing."""
@@ -55,7 +57,6 @@ class AudioSound(factory.django.DjangoModelFactory):
 # FAKER GENERATED INSTANCE
 class VehicleModelFactory(factory.django.DjangoModelFactory):
     pass
-
 
 # STATIC CREATED INSTANCE
 class StaticVehicleModel(factory.django.DjangoModelFactory):

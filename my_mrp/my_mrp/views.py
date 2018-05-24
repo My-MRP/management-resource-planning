@@ -6,20 +6,12 @@ from django.views.generic.base import TemplateView
 from vehicle_quote.models import VehicleQuote
 
 
-class HomeView(TemplateView):
-    """Make the HomeView class."""
-
-    template_name = 'generic/home.html'
-    # context_object_name = 'quotes'
-
-
-class AboutUsView(TemplateView):
-    """Make the AboutUsView class."""
-
-    template_name = 'generic/about_us.html'
-
-
+# Generates Graph based on Data.
 def createGraph():
+<<<<<<< HEAD
+    """Creates Visual for most popular models quoted."""
+=======
+>>>>>>> 51cbe3932c54d751a68361bccf0ca9d1d74ad861
     vehicles = {}
     colors = {}
     car_models = VehicleQuote.objects.all()
@@ -31,32 +23,44 @@ def createGraph():
     try:
         # Uses Plotly's API
         plotly.tools.set_credentials_file(username='kiirby', api_key='TdfP7ccHINP4BI76EDNj')
-
-        trace = go.Pie(labels=list(vehicles.keys()), values=list(vehicles.values()))
+        trace = go.Pie(
+            labels=list(vehicles.keys()),
+            values=list(vehicles.values())
+        )
         # GRAPH DIMENSION.
-        layout = go.Layout(title='Most popular Models', width=800, height=640, paper_bgcolor='rgb(27, 32, 46)')
+        layout = go.Layout(
+            title='Most Quoted Models',
+            width=800, height=640,
+            paper_bgcolor='rgb(27, 32, 46)',
+            font=dict(color='rgb(52, 156, 134)', size=30)
+        )
         graph = go.Figure(data=[trace], layout=layout)
-
         # Creates graph and saves it to the project.
-        print('----------------------------------------------')
-        print(graph)
+        print('-' * 45)
         py.image.save_as(graph, filename='my_mrp/static/popular_models.png')
-        print(graph)
-
         py.image.ishow(graph)
-
     except:
-        return False
         print('[!] FATAL ERROR')
+        return False
     finally:
         print('[*] Finished Executing PLOTLY/DB Queries.')
-        print('----------------------------------------------')
+        print('-' * 45)
 
 
-createGraph()
+class HomeView(TemplateView):
+    """Make the HomeView class for the initial landing page for signing in and the salesman dashboard after signing in."""
+    template_name = 'generic/home.html'
+    context_object_name = 'quotes'
+    def get_context_data(self):
+        createGraph()
+        return {}
+
+
+class AboutUsView(TemplateView):
+    """Make the AboutUsView class where the pics, bios and links of the developers can be shown."""
+    template_name = 'generic/about_us.html'
 
 
 class ComponentView(TemplateView):
-    """."""
-
+    """Make the component view class where the user can select the type of component they want to add."""
     template_name = 'generic/component.html'

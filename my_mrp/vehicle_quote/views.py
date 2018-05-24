@@ -3,8 +3,6 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
-from django.views.generic import UpdateView
-from django.http import HttpResponseRedirect
 from .models import VehicleQuote
 from product_vehicle.models import Vehicle
 from .forms import VehicleQuoteForm
@@ -116,20 +114,3 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
         """Get context."""
         context = super().get_context_data(**kwargs)
         return context
-
-
-# class QuoteEditView(LoginRequiredMixin, UpdateView):
-#     """Define the quote edit view."""
-
-#     template_name = 'vehicle_quote/quote_edit.html'
-#     model = VehicleQuote
-#     form_class = VehicleQuoteForm
-#     login_url = reverse_lazy('auth_login')
-#     success_url = reverse_lazy('library')
-#     pk_url_kwarg = 'id'
-
-#     def get_form_kwargs(self):
-#         """Get the form data that is submitted by the quote to update the quote."""
-#         kwargs = super().get_form_kwargs()
-#         kwargs.update({'username': self.request.user.username})
-#         return kwargs

@@ -5,6 +5,14 @@
     color: rgb(52, 156, 134);
 }
 
+#super_nav-bar {
+    position: absolute;
+    top: 12px; right: 130px;
+    font-size: 25px;
+    font-family: 'Boogaloo', cursive;
+    color: rgb(102, 231, 203);
+}
+
 .nav-bar {
     background-color: black;
     position: absolute;
@@ -45,7 +53,6 @@
 #main_nav {
     position: absolute;
     top: 12px; right: 40px;
-    color: aquamarine;
     font-size: 30px;
 }
 

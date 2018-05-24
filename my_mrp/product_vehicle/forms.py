@@ -1,9 +1,11 @@
+"""Define the add vehicle form."""
+
 from .models import Vehicle, Engine, ExteriorColor, InteriorColor, Wheel, AudioSound
 from django.forms import ModelForm
 
 
 class AddVehicleForm(ModelForm):
-    """Add vehicle form."""
+    """Make the form to add a vehicle from the Vehicle model."""
 
     class Meta:
         """Meta."""
