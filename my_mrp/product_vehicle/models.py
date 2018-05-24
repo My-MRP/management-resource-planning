@@ -1,11 +1,11 @@
-"""Define the models for the vehicle and parts."""
+"""Define the models for the vehicle and component parts."""
 
 from django.db import models
 
 
 # ADMIN: Create Vehicle
 class Vehicle(models.Model):
-    """Allow Admin to create new vehicle type."""
+    """Define the Veehicle model."""
 
     model_name = models.CharField(
         max_length=100,

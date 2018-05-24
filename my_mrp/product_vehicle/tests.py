@@ -16,11 +16,13 @@ class VehicleModelFactory(factory.django.DjangoModelFactory):
             )
     mustang.save()
 
+
 class Engine(factory.django.DjangoModelFactory):
     """docstring for ."""
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
+
 
 class ExteriorColor(factory.django.DjangoModelFactory):
     """docstring for ."""
@@ -34,6 +36,7 @@ class InteriorColor(factory.django.DjangoModelFactory):
     def __init__(self, arg):
         super(, self).__init__()
         self.arg = arg
+
 
 class Wheel(factory.django.DjangoModelFactory):
     """docstring for ."""

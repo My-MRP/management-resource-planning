@@ -6,14 +6,14 @@ from django.views.generic.base import TemplateView
 
 
 class HomeView(TemplateView):
-    """Make the HomeView class."""
+    """Make the HomeView class for the initial landing page for signing in and the salesman dashboard after signing in."""
 
     template_name = 'generic/home.html'
     context_object_name = 'quotes'
 
 
 class AboutUsView(TemplateView):
-    """Make the AboutUsView class."""
+    """Make the AboutUsView class where the pics, bios and links of the developers can be shown."""
 
     template_name = 'generic/about_us.html'
 
@@ -44,6 +44,6 @@ createGraph()
 
 
 class ComponentView(TemplateView):
-    """."""
+    """Make the component view class where the user can select the type of component they want to add."""
 
     template_name = 'generic/component.html'
