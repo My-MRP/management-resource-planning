@@ -9,6 +9,7 @@
   <link href="{% static "base.css" %}" rel="stylesheet" type="text/css" />
   <link href="{% static "layout.css" %}" rel="stylesheet" type="text/css" />
   <link href="{% static "modules.css" %}" rel="stylesheet" type="text/css" />
+  <link href="{% static "about_us.css" %}" rel="stylesheet" type="text/css" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>MyMRP</title>
 </head>
@@ -20,6 +21,11 @@
       <h1 id="main-title-l">MRP</h1>
       <ul id="main_nav">
         <li><a class="sky" href="{% url "home" %}">Home</a></li>
+        {% if user.is_superuser %}
+        <li><a class="sky" href="{% url "add_vehicle" %}">Create Vehicle</a></li>
+        <li><a class="sky" href="{% url "component" %}">Create Components</a></li>
+        <li><a class="sky" href="{% url "admin:index" %}">Admin</a></li>
+        {% endif %}
         {% if user.is_authenticated %}
         <li><a class="sky" href="{% url "auth_logout" %}">Logout</a></li>
         {% else %}
@@ -33,9 +39,6 @@
     <h3>No Content</h3>
     {% endblock content%}
   </main>
-  <footer>
-
-  </footer>
 
 </body>
 </html>
