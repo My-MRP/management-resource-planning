@@ -21,6 +21,7 @@ def createSeries():
 
     data = [go.Scatter(x=df.Date, y=df.High)]
     fig = go.Figure(data = data)
+    import pdb; pdb.set_trace()
     py.image.save_as(fig, filename='my_mrp/static/series.png')
     py.image.ishow(fig)
 
