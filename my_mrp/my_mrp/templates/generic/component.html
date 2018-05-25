@@ -2,6 +2,7 @@
 {% load static %}
 
   {% block content %}
+  
   {% if user.is_superuser %}
   <ul class="comp-add">
       <li><button class="comp-link"><a class="sky" href="{% url "add_engine" %}">Create New Engine</a></button></li>
@@ -11,4 +12,5 @@
       <li><button class="comp-link"><a class="sky" href="{% url "add_audio" %}">Create New Audio System</a></button></li>
   </ul>
   {% endif %}
+
 {% endblock %}

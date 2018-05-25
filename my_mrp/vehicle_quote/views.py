@@ -73,7 +73,6 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
     def get_form_kwargs(self):
         """Get the username."""
         kwargs = super().get_form_kwargs()
-        kwargs.update({'username': self.request.user.username})
         kwargs.update({'id': self.kwargs['id']})
         return kwargs
 
@@ -92,7 +91,7 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
     login_url = reverse_lazy('auth_login')
 
     def get_object(self):
-        """."""
+        """Create quote price if doesn't exist."""
         car = VehicleQuote.objects.filter(id=self.kwargs['id']).first()
         if not car.quoted_price and not car.manufacture_cost:
             car.manufacture_cost = (
@@ -104,6 +103,11 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
                 car.manufacture_cost * car.model_name.markup_multiplier
             )
             car.save()
+        car.e = car.engine.first().name
+        car.c = car.exterior_color.first().name
+        car.i = car.interior_package.first().name
+        car.w = car.wheels.first().name
+        car.a = car.audio_system.first().name
         return car
 
     def get_context_data(self, **kwargs):
