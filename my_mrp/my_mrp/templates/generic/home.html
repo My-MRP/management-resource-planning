@@ -9,12 +9,15 @@
         <button id="list"><a href="{% url "quote_list" %}">My Quotes</a></button>
     </div>
     <div class="right-box">
-    <button id-"create"><a href="{% url "select_model" %}">Create a new quote</a></button>
-    <img style="float:right "src="{% static "popular_models.png" %}" height="350" width="500">
+    <button id="create"><a href="{% url "select_model" %}"> Create a New Quote </a></button>
+    <img id="pie-chart" src="{% static "popular_models.png" %}" height="350" width="500">
     </div>
   </body>
     {%else%}
     <h1 id="anon-welcome">Welcome to My MRP!</h1>
     {% endif %}
+    <footer>
+      <button id="about_us_button"><a href="{% url "about_us" %}"> Meet the DEV Team </a></button>
+    </footer>
 
-{% endblock %}
+  {% endblock %}

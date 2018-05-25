@@ -3,8 +3,6 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
-from django.views.generic import UpdateView
-from django.http import HttpResponseRedirect
 from .models import VehicleQuote
 from product_vehicle.models import Vehicle
 from .forms import VehicleQuoteForm
@@ -39,7 +37,7 @@ class QuoteListView(LoginRequiredMixin, ListView):
         return context
 
 
-class SelectModelName(ListView):
+class SelectModelName(LoginRequiredMixin, ListView):
     """Get the model names to create a quote."""
 
     template_name = 'select_model.html'
@@ -75,7 +73,6 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
     def get_form_kwargs(self):
         """Get the username."""
         kwargs = super().get_form_kwargs()
-        kwargs.update({'username': self.request.user.username})
         kwargs.update({'id': self.kwargs['id']})
         return kwargs
 
@@ -94,7 +91,7 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
     login_url = reverse_lazy('auth_login')
 
     def get_object(self):
-        """."""
+        """Create quote price if doesn't exist."""
         car = VehicleQuote.objects.filter(id=self.kwargs['id']).first()
         if not car.quoted_price and not car.manufacture_cost:
             car.manufacture_cost = (
@@ -116,20 +113,3 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
         """Get context."""
         context = super().get_context_data(**kwargs)
         return context
-
-
-# class QuoteEditView(LoginRequiredMixin, UpdateView):
-#     """Define the quote edit view."""
-
-#     template_name = 'vehicle_quote/quote_edit.html'
-#     model = VehicleQuote
-#     form_class = VehicleQuoteForm
-#     login_url = reverse_lazy('auth_login')
-#     success_url = reverse_lazy('library')
-#     pk_url_kwarg = 'id'
-
-#     def get_form_kwargs(self):
-#         """Get the form data that is submitted by the quote to update the quote."""
-#         kwargs = super().get_form_kwargs()
-#         kwargs.update({'username': self.request.user.username})
-#         return kwargs
