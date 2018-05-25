@@ -25,38 +25,41 @@
 |`'about_us/'`|about_us|pictures and bios for the dev team|
 
 # Getting Started:
-Clone this repository to your local machine.
+- Clone this repository to your local machine.
 
-$ git clone https://github.com/My-MRP/management-resource-planning.git
+- $ git clone https://github.com/My-MRP/management-resource-planning.git
 
-Once downloaded, change directory into the management-resource-planning directory.
-Begin a new virtual environment with Python 3 and activate it.
-Install the application requirements with pip.
-Create a Postgres database for use with this application.
-Export environmental variables pointing to the location of database, your username, hashed password, and secret key
+- Once downloaded, change directory into the management-resource-planning directory.
+- Begin a new virtual environment with Python 3 and activate it.
+- Install the application requirements with pip.
+- go to the pandas_datareader	library in your ENV
+- open fred.py
+- change the import: from pandas.core.common to from pandas.api.types import is_list_like
+- Create a Postgres database for use with this application.
+- Export environmental variables pointing to the location of database, your username, hashed password, and secret key
 
-- (ENV) export SECRET_KEY=''
-- (ENV) export DB_NAME=''
-- (ENV) export DB_USER=''
-- (ENV) export DB_PASS=''
-- (ENV) export DB_HOST=''
-- (ENV) export DEBUG='True'
+ - (ENV) export SECRET_KEY=''
+ - (ENV) export DB_NAME=''
+ - (ENV) export DB_USER=''
+ - (ENV) export DB_PASS=''
+ - (ENV) export DB_HOST=''
+ - (ENV) export DEBUG='True'
 
-Initialize the database with the migrate command from manage.py
-Once the package is installed and the database is created, start the server with the runserver command from manage.py
-Testing
-You can test this application by first exporting an environmental variable pointing to the location of a testing database, then running the test command from manage.py.
+- Initialize the database with the migrate command from manage.py
+- Once the package is installed and the database is created, start the server with the runserver command from manage.py
+#Testing
+- You can test this application by first exporting an environmental variable pointing to the location of a testing database, then running the test command from manage.py.
 
 ## Deployment:
-You can deploy this application to AWS using Ansible.
-If you do not already have Ansible installed, install it outside your environment with pip
-Create a hosts file in the root of management-resource-planning
-Set up your EC2 and RDS on AWS
-Deploy the application with ansible-playbook
+- You can deploy this application to AWS using Ansible.
+- If you do not already have Ansible installed, install it outside your environment with pip
+- Create a hosts file in the root of management-resource-planning
+- Set up your EC2 and RDS on AWS
+- Deploy the application with ansible-playbook
 
 ## Built With:
-Built with Python and Django framework. 
-Additional packages required are Plotly, Ansible, and Coveralls.
+- Built with Python and Django framework. 
+- Additional packages required are Plotly, Ansible, and Coveralls.
 
 ## License
 - This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
@@ -89,4 +92,3 @@ Additional packages required are Plotly, Ansible, and Coveralls.
 5/25 
 - Added the chart to the left display
 - Final deploy
-	

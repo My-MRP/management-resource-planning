@@ -1,11 +1,28 @@
 """Define the My MRP home and about_us views, make the charts and graphs for the dashboard."""
-import plotly
-from django.contrib.auth.mixins import LoginRequiredMixin
+
 from django.views.generic.base import TemplateView
 from vehicle_quote.models import VehicleQuote
-from django.shortcuts import redirect
+import pandas_datareader.data as web
 import plotly.graph_objs as go
+from datetime import datetime
 import plotly.plotly as py
+import plotly
+
+
+
+
+def createSeries():
+    """Creates Series Graph to represent an individual seller"""
+    plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
+    df = web.DataReader(
+        "aapl", 'morningstar',
+        datetime(2015, 1, 1),
+        datetime(2016, 7, 1)).reset_index()
+
+    data = [go.Scatter(x=df.Date, y=df.High)]
+    fig = go.Figure(data = data)
+    py.image.save_as(fig, filename='my_mrp/static/series.png')
+    py.image.ishow(fig)
 
 
 # Generates Graph based on Data.
@@ -21,7 +38,7 @@ def createGraph():
             vehicles[car] += 1
     try:
         # Uses Plotly's API
-        plotly.tools.set_credentials_file(username='kiirby', api_key='TdfP7ccHINP4BI76EDNj')
+        plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
         trace = go.Pie(
             labels=list(vehicles.keys()),
             values=list(vehicles.values())
@@ -54,6 +71,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self):
         """Create Graph."""
+        createSeries()
         createGraph()
         return {}
 
@@ -64,9 +82,8 @@ class AboutUsView(TemplateView):
     template_name = 'generic/about_us.html'
 
 
-class ComponentView(LoginRequiredMixin, TemplateView):
+class ComponentView(TemplateView):
     """Make the component view class where the user can select the type of component they want to add."""
-
     template_name = 'generic/component.html'
 
     def get(self, request):

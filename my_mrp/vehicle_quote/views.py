@@ -95,16 +95,12 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
         car = VehicleQuote.objects.filter(id=self.kwargs['id']).first()
         if not car.quoted_price and not car.manufacture_cost:
             car.manufacture_cost = (
-                car.engine.first().cost +
-                car.exterior_color.first().cost +
-                car.interior_package.first().cost +
-                car.wheels.first().cost +
-                car.audio_system.first().cost +
-                car.model_name.body_cost
+                car.engine.first().cost + car.exterior_color.first().cost +
+                car.interior_package.first().cost + car.wheels.first().cost +
+                car.audio_system.first().cost + car.model_name.body_cost
             )
             car.quoted_price = (
-                car.manufacture_cost *
-                car.model_name.markup_multiplier
+                car.manufacture_cost * car.model_name.markup_multiplier
             )
             car.save()
         car.e = car.engine.first().name
