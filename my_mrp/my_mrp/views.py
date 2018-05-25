@@ -21,7 +21,7 @@ def createGraph():
             vehicles[car] += 1
     try:
         # Uses Plotly's API
-        plotly.tools.set_credentials_file(username='kiirby', api_key='TdfP7ccHINP4BI76EDNj')
+        plotly.tools.set_credentials_file(username='codefellows', api_key='Ke6uGQQNNO7ItCiRjzQb')
         trace = go.Pie(
             labels=list(vehicles.keys()),
             values=list(vehicles.values())
