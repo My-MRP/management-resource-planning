@@ -9,7 +9,7 @@
         <p>Name: {{ quote.name }}</p>
         <p>Model: {{ quote.model_name }}</p>
         <p>Date Created: {{ quote.date_created }}</p>
-        <button id="detail-button"><a href="{% url "quote_detail" id=quote.id %}">View Quote Detail</a></button>
+        <button id="detail-button"><a id="detail-link" href="{% url "quote_detail" id=quote.id %}">View Quote Detail</a></button>
     </div>
     {% endfor %}
 </section>
