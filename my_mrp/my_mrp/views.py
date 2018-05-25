@@ -20,7 +20,14 @@ def createSeries():
         datetime(2016, 7, 1)).reset_index()
 
     data = [go.Scatter(x=df.Date, y=df.High)]
-    fig = go.Figure(data = data)
+    import pdb; pdb.set_trace()
+    layout = go.Layout(
+        title='Individual Performance',
+        width=800, height=640,
+        paper_bgcolor='rgb(52, 156, 134)',
+        font=dict(color='black', size=30)
+    )
+    fig = go.Figure(data = data, layout=layout)
     py.image.save_as(fig, filename='my_mrp/static/series.png')
     py.image.ishow(fig)
 
