@@ -13,6 +13,9 @@ omit =
     */manage.py
     */wsgi.py
     */production.py
+    */forms.py
+    */my_mrp/vehicle_quote/views.py
+    */my_mrp/product_vehicle/views.py
 
 source =
     my_mrp
