@@ -13,7 +13,7 @@ import plotly
 
 def createSeries():
     """Creates Series Graph to represent an individual seller"""
-    plotly.tools.set_credentials_file(username='codefellows', api_key='Ulx7QkjumhIxh4mg2CMh')
+    plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
     df = web.DataReader(
         "aapl", 'morningstar',
         datetime(2015, 1, 1),
@@ -38,7 +38,7 @@ def createGraph():
             vehicles[car] += 1
     try:
         # Uses Plotly's API
-        plotly.tools.set_credentials_file(username='codefellows', api_key='Ulx7QkjumhIxh4mg2CMh')
+        plotly.tools.set_credentials_file(username='georgeceja', api_key='gSanLQQes3Sunxc0k0IY')
         trace = go.Pie(
             labels=list(vehicles.keys()),
             values=list(vehicles.values())
