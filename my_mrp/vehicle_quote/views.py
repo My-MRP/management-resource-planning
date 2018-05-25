@@ -92,7 +92,7 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
     login_url = reverse_lazy('auth_login')
 
     def get_object(self):
-        """."""
+        """Create quote price if doesn't exist."""
         car = VehicleQuote.objects.filter(id=self.kwargs['id']).first()
         if not car.quoted_price and not car.manufacture_cost:
             car.manufacture_cost = (

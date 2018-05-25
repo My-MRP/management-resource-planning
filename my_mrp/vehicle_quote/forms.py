@@ -12,7 +12,15 @@ class VehicleQuoteForm(ModelForm):
         """Meta data for VehicleQuote form."""
 
         model = VehicleQuote
-        fields = ['name', 'engine', 'interior_package', 'audio_system', 'exterior_color', 'wheels']
+
+        fields = [
+            'name',
+            'engine',
+            'interior_package',
+            'audio_system',
+            'exterior_color',
+            'wheels',
+        ]
 
     def __init__(self, *args, **kwargs):
         """Init for VehicleQuote form."""
