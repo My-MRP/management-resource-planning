@@ -6,11 +6,11 @@
   <h1 id="details-name">Quote Name:  {{quote.name}}</h1>
   <ul class="quote-details">
     <li id="details-model">Model: {{quote.model_name}}</li>
-    <li id="details-engine">Engine: {{quote.engine}}</li>
-    <li id="details-ext">Exterior Color: {{quote.exterior_color}}</li>
-    <li id="details-int">Interior Package: {{quote.interior_color}}</li>
-    <li id="details-wheels">Wheels: {{quote.wheels}}</li>
-    <li id="details-audio">Audio System: {{quote.audio_system}}</li>
+    <li id="details-engine">Engine: {{quote.engine.name}}</li>
+    <li id="details-ext">Exterior Color: {{quote.exterior_color.name}}</li>
+    <li id="details-int">Interior Package: {{quote.interior_color.name}}</li>
+    <li id="details-wheels">Wheels: {{quote.wheels.name}}</li>
+    <li id="details-audio">Audio System: {{quote.audio_system.name}}</li>
     <li id="details-cost">Manufacture Cost: {{quote.manufacture_cost}}</li>
     <li id="details-sell">Quoted Sell Price: {{quote.quoted_price}}</li>
     <li id="details-create">Date Created: {{quote.date_created}}</li>
