@@ -62,10 +62,31 @@ Additional packages required are Plotly, Ansible, and Coveralls.
 - This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 - Logo designed by Vexels https://www.vexels.com/vectors/preview/139518/3d-piechart-graph
 
-Change Log
+## Change Log
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-Logo designed by Vexels https://www.vexels.com/vectors/preview/139518/3d-piechart-graph
-## Acknowledgments
+5/21 
+- Created the Org and  repo.  
+- Added the initial My MRP App, 
+- Added the Vehicle Quote App and Quote views
 
-* etc
+5/22 
+- Added Django Registration
+- Added the Product Vehicle app and models
+- Creation of component and vehicle models
+- Added the vehicle quote model and vehicle quote form
+	
+5/23	
+- Added the Quote Details view
+- Added the Vehicle and Component create forms
+- Added Plotly
+- Started on the UI styling
+
+5/24 
+- Added sensible and deployed tom AWS
+- Added coveralls and tests to get to 80% coverage
+- Finished the UI styling on all views
+
+5/25 
+- Added the chart to the left display
+- Final deploy
+	
