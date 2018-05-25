@@ -50,6 +50,10 @@ a {
     color: rgb(52, 156, 134);
 }
 
+#detail-link {
+    color: rgb(27, 32, 46)
+}
+
 #create {
     position: absolute;
     top: 500px;
