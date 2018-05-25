@@ -2,7 +2,7 @@
 
 from django.views.generic.base import TemplateView
 from vehicle_quote.models import VehicleQuote
-import pandas_datareader.data as web
+# import pandas_datareader.data as web
 import plotly.graph_objs as go
 from datetime import datetime
 import plotly.plotly as py
@@ -71,7 +71,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self):
         """Create Graph."""
-        createSeries()
+        # createSeries()
         createGraph()
         return {}
 
