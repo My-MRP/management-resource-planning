@@ -92,5 +92,3 @@
 5/25 
 - Added the chart to the left display
 - Final deploy
-	
-
