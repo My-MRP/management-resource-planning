@@ -107,6 +107,11 @@ class QuoteDetailView(LoginRequiredMixin, DetailView):
                 car.model_name.markup_multiplier
             )
             car.save()
+        car.e = car.engine.first().name
+        car.c = car.exterior_color.first().name
+        car.i = car.interior_package.first().name
+        car.w = car.wheels.first().name
+        car.a = car.audio_system.first().name
         return car
 
     def get_context_data(self, **kwargs):
