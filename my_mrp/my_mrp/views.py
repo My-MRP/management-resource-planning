@@ -10,7 +10,7 @@ import plotly.plotly as py
 
 # Generates Graph based on Data.
 def createGraph():
-    """Creates Visual for most popular models quoted."""
+    """Create Visual for most popular models quoted."""
     vehicles = {}
     colors = {}
     car_models = VehicleQuote.objects.all()
@@ -48,24 +48,29 @@ def createGraph():
 
 class HomeView(TemplateView):
     """Make the HomeView class for the initial landing page for signing in and the salesman dashboard after signing in."""
+
     template_name = 'generic/home.html'
     context_object_name = 'quotes'
+
     def get_context_data(self):
+        """Create Graph."""
         createGraph()
         return {}
 
 
 class AboutUsView(TemplateView):
     """Make the AboutUsView class where the pics, bios and links of the developers can be shown."""
+
     template_name = 'generic/about_us.html'
 
 
 class ComponentView(LoginRequiredMixin, TemplateView):
     """Make the component view class where the user can select the type of component they want to add."""
+
     template_name = 'generic/component.html'
 
     def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}
+        """Check for admin status."""
+        if self.request.user.is_superuser:
+            return super().get(request)
+        return redirect('home')

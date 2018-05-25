@@ -1,6 +1,7 @@
 """Define the classes to add new vehicles and components."""
 
 from django.shortcuts import redirect
+from django.http import HttpResponse
 from django.views.generic import CreateView
 from product_vehicle.models import Vehicle, Engine, ExteriorColor, InteriorColor, Wheel, AudioSound
 from product_vehicle.forms import AddVehicleForm
@@ -18,10 +19,10 @@ class AddVehicleView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('auth_login')
 
     def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}
+        """Check for admin status."""
+        if self.request.user.is_superuser:
+            return super().get(request)
+        return redirect('home')
 
     def form_valid(self, form):
         """Validate form."""
@@ -39,10 +40,10 @@ class AddEngineView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('auth_login')
 
     def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}
+        """Check for admin status."""
+        if self.request.user.is_superuser:
+            return super().get(request)
+        return redirect('home')
 
     def form_valid(self, form):
         """Validate form."""
@@ -60,10 +61,10 @@ class AddExteriorColorView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('auth_login')
 
     def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}    
+        """Check for admin status."""
+        if self.request.user.is_superuser:
+            return super().get(request)
+        return redirect('home')
 
     def form_valid(self, form):
         """Validate form."""
@@ -81,10 +82,10 @@ class AddWheelView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('auth_login')
 
     def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}
+        """Check for admin status."""
+        if self.request.user.is_superuser:
+            return super().get(request)
+        return redirect('home')
 
     def form_valid(self, form):
         """Validate form."""
@@ -102,10 +103,10 @@ class AddInteriorColorView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('auth_login')
 
     def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}
+        """Check for admin status."""
+        if self.request.user.is_superuser:
+            return super().get(request)
+        return redirect('home')
 
     def form_valid(self, form):
         """Validate form."""
@@ -123,10 +124,10 @@ class AddAudioView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('auth_login')
 
     def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}
+        """Check for admin status."""
+        if self.request.user.is_superuser:
+            return super().get(request)
+        return redirect('home')
 
     def form_valid(self, form):
         """Validate form."""

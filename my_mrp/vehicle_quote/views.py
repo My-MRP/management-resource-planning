@@ -73,7 +73,6 @@ class AddQuoteView(LoginRequiredMixin, CreateView):
     def get_form_kwargs(self):
         """Get the username."""
         kwargs = super().get_form_kwargs()
-        kwargs.update({'username': self.request.user.username})
         kwargs.update({'id': self.kwargs['id']})
         return kwargs
 
