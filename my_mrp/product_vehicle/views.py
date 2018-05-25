@@ -8,6 +8,9 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+
+
+
 # Create your views here.
 class AddVehicleView(LoginRequiredMixin, CreateView):
     """Add new vehicle."""
@@ -22,13 +25,12 @@ class AddVehicleView(LoginRequiredMixin, CreateView):
         """Verify the user is a superuser."""
         if not self.request.user.is_superuser:
             return redirect('home')
-        return {}
+        return super().get(request)
 
     def form_valid(self, form):
         """Validate form."""
         form.instance.user = self.request.user
         return super().form_valid(form)
-
 
 class AddEngineView(LoginRequiredMixin, CreateView):
     """Add new engine."""
@@ -43,7 +45,7 @@ class AddEngineView(LoginRequiredMixin, CreateView):
         """Verify the user is a superuser."""
         if not self.request.user.is_superuser:
             return redirect('home')
-        return {}
+        return super().get(request)
 
     def form_valid(self, form):
         """Validate form."""
@@ -64,7 +66,7 @@ class AddExteriorColorView(LoginRequiredMixin, CreateView):
         """Verify the user is a superuser."""
         if not self.request.user.is_superuser:
             return redirect('home')
-        return {}    
+        return super().get(request)
 
     def form_valid(self, form):
         """Validate form."""
@@ -85,7 +87,7 @@ class AddWheelView(LoginRequiredMixin, CreateView):
         """Verify the user is a superuser."""
         if not self.request.user.is_superuser:
             return redirect('home')
-        return {}
+        return super().get(request)
 
     def form_valid(self, form):
         """Validate form."""
@@ -106,7 +108,7 @@ class AddInteriorColorView(LoginRequiredMixin, CreateView):
         """Verify the user is a superuser."""
         if not self.request.user.is_superuser:
             return redirect('home')
-        return {}
+        return super().get(request)
 
     def form_valid(self, form):
         """Validate form."""
@@ -127,7 +129,7 @@ class AddAudioView(LoginRequiredMixin, CreateView):
         """Verify the user is a superuser."""
         if not self.request.user.is_superuser:
             return redirect('home')
-        return {}
+        return super().get(request)
 
     def form_valid(self, form):
         """Validate form."""

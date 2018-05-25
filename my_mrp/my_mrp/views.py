@@ -1,11 +1,9 @@
 """Define the My MRP home and about_us views, make the charts and graphs for the dashboard."""
 import plotly
-from django.contrib.auth.mixins import LoginRequiredMixin
+import plotly.plotly as py
+import plotly.graph_objs as go
 from django.views.generic.base import TemplateView
 from vehicle_quote.models import VehicleQuote
-from django.shortcuts import redirect
-import plotly.graph_objs as go
-import plotly.plotly as py
 
 
 # Generates Graph based on Data.
@@ -60,12 +58,6 @@ class AboutUsView(TemplateView):
     template_name = 'generic/about_us.html'
 
 
-class ComponentView(LoginRequiredMixin, TemplateView):
+class ComponentView(TemplateView):
     """Make the component view class where the user can select the type of component they want to add."""
     template_name = 'generic/component.html'
-
-    def get(self, request):
-        """Verify the user is a superuser."""
-        if not self.request.user.is_superuser:
-            return redirect('home')
-        return {}
