@@ -39,7 +39,7 @@ def createGraph():
         py.image.save_as(graph, filename='my_mrp/static/popular_models.png')
         py.image.ishow(graph)
     except:
-        print('[!] FATAL ERROR')
+        #print('[!] FATAL ERROR')
         return False
     finally:
         print('[*] Finished Executing PLOTLY/DB Queries.')
