@@ -1,0 +1,12 @@
+{% extends "generic/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="quote-edit container">
+  <form class="quote-edit-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+  </form>
+</div>
+{% endblock content %}

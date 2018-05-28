@@ -1,0 +1,14 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="django-form vehicle-add container">
+  <h2>Add New Vehicle</h2>
+  <form class="vehicle-add-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Vehicle</button>
+  </form>
+</div>
+{% endblock content %}

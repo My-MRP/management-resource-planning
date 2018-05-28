@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(52, 156, 134);
+    position: relative;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 175%;
+}
+
+h3 {
+    font-size: 150%;
+}

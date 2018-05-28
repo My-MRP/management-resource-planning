@@ -1,0 +1,221 @@
+.login-form {
+    position: absolute;
+    top: 200px;
+    left: 40%;
+    padding: 10px;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
+}
+
+.login-form p {
+    margin: 10px;
+    color: rgb(52, 156, 134)
+}
+
+#id_password {
+    margin-left: 4px;
+}
+
+.login-form form [type="submit"] {
+    margin-left: 155px;
+}
+
+#pie-chart {
+    position: absolute;
+    right: 40px;
+}
+
+#results {
+    position: absolute;
+    left: 70px;
+    top: 60px;
+}
+
+#logged-out {
+    position: absolute;
+    top: 42px;
+    left: 40%;
+    font-family: 'Boogaloo', cursive;
+    color: rgb(52, 156, 134);
+}
+
+#list {
+    position: absolute;
+    top: 500px;
+    left: 225px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
+    border: none;
+    padding: 6px;
+}
+
+a {
+    color: rgb(52, 156, 134);
+}
+
+#detail-link {
+    color: rgb(27, 32, 46)
+}
+
+#create {
+    position: absolute;
+    top: 500px;
+    right: 166px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: rgb(52, 156, 134);
+    border: none;
+    padding: 6px;
+}
+
+#create a {
+    color: rgb(27, 32, 46);
+}
+
+.select-model {
+    position: absolute;
+    top: 120px;
+    left: 170px;
+    color: rgb(23, 27, 26);
+}
+
+#select-title {
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.model-link {
+    margin-bottom: 15px;
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 40px;
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.django-form {
+    position: absolute;
+    top: 120px;
+    left: 142px;
+    width: 17%;
+}
+
+.django-form p {
+    margin-bottom: 10px;
+}
+
+.django-form label {
+    font-size: 20px;
+}
+
+.django-form select {
+    height: 54px;
+    width: 209px;
+    background-color: rgb(23, 27, 26);
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 15px;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.django-form input {
+    height: 25px;
+    width: 200px;
+    background-color: rgb(23, 27, 26);
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 15px;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.django-form button {
+    height: 25px;
+    width: 200px;
+    background-color: rgb(23, 27, 26);
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 15px;
+    padding: 3px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.quote-list {
+    position: absolute;
+    top: 120px;
+    left: 60px;
+}
+
+.quote-single {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(27, 32, 46);
+    color: rgb(52, 156, 134);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    border-radius: 5px;
+}
+
+.quote-single p {
+    margin-bottom: 4px;
+}
+
+#detail-button {
+    border: 1px solid white;
+    background-color: rgb(52, 156, 134);
+    color: rgb(27, 32, 46);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    margin: 7px;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+#details-container {
+    position: absolute;
+    top: 140px;
+    left: 20%;
+    background-color: rgb(27, 32, 46);
+    color: rgb(52, 156, 134);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#details-name {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quote-details li {
+    margin: 10px;
+    font-size: 25px;
+}
+
+.comp-add {
+    position: absolute;
+    top: 120px;
+    left: 170px;
+    color: rgb(23, 27, 26);
+}
+
+.comp-link {
+    margin-bottom: 15px;
+    color: rgb(52, 156, 143);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: rgb(27, 32, 46);
+    border: none;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,115 @@
+---
+- hosts: us-west-2
+  remote_user: ubuntu
+  environment:
+    SECRET_KEY: "{{ secret_key }}"
+    DB_NAME: "{{ db_name }}"
+    DB_USER: "{{ db_user }}"
+    DB_PASSWORD: "{{ db_password }}"
+    DB_HOST: "{{ db_host }}"
+  tasks:
+    - name: Update the base Unbutu image
+      apt: update_cache=yes
+      become: yes
+      become_method: sudo
+
+    - name: Install build dependencies
+      apt: name={{ item }} state=latest update_cache=yes
+      become: yes
+      become_method: sudo
+      with_items:
+        - python-dev
+        - python3-venv
+        - python3-pip
+        - build-essential
+        - postgresql-client
+        - postgresql 
+        - postgresql-contrib
+        - nginx
+        - libpq-dev
+
+    - name: Clone repo into Ubuntu
+      git:
+        repo: 'https://github.com/My-MRP/management-resource-planning.git'
+        dest: /home/ubuntu/management-resource-planning
+        clone: yes
+        update: yes
+
+
+    - name: Create a virtual env for the project to run in
+      command: python3 -m venv /home/ubuntu/ENV
+      become: yes
+      become_method: sudo
+
+    - name: Pip install requirements into Virtual Environment
+      pip:
+        requirements: /home/ubuntu/management-resource-planning/requirements.txt
+        virtualenv: /home/ubuntu/ENV
+      become: yes
+      become_method: sudo
+
+    - name: mv Gunicorn config
+      template:
+        src: templates/gunicorn.service
+        dest: /etc/systemd/system/
+      become: yes
+      become_method: sudo
+
+    - name: Migrate databases
+      django_manage:
+        command: migrate
+        app_path: /home/ubuntu/management-resource-planning/my_mrp
+        virtualenv: /home/ubuntu/ENV
+
+    - name: Collect static css files
+      django_manage:
+        command: collectstatic
+        app_path: /home/ubuntu/management-resource-planning/my_mrp
+        virtualenv: /home/ubuntu/ENV
+
+    - name: Install Gunicorn into Virtual Environment
+      pip: virtualenv=/home/ubuntu/ENV name=gunicorn
+      become: yes
+      become_method: sudo
+
+    - name: Register the backup default config for nginx
+      stat: path=/etc/nginx/sites-available/default.bak
+      register: default_stat
+
+    - name: mv and rename default nginx config
+      command: mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+      become: yes
+      become_method: sudo
+      when: not default_stat.stat.exists
+
+    - name: Create a new Nginx config
+      template:
+        src: templates/nginx_config
+        dest: /etc/nginx/sites-available/default
+      become: yes
+      become_method: sudo
+
+    - name: Stop Gunicorn
+      command: systemctl stop gunicorn
+      become: yes
+      become_method: sudo
+
+    - name: Enable Nginx
+      command: systemctl enable nginx
+      become: yes
+      become_method: sudo
+
+    - name: Enable Gunicorn
+      command: systemctl enable gunicorn
+      become: yes
+      become_method: sudo
+
+    - name: Start Nginx
+      command: systemctl restart nginx
+      become: yes
+      become_method: sudo
+
+    - name: Start Gunicorn
+      command: systemctl start gunicorn
+      become: yes
+      become_method: sudo

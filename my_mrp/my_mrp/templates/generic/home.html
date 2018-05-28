@@ -1,0 +1,24 @@
+{% extends 'generic/base.html' %}
+{% load static %}
+
+  {% block content %}
+  {% if user.is_authenticated %}
+  <body>
+    <h1 id="welcome">Welcome to your dashboard, {{ user.username }}</h1>
+    <div class="left-box">
+        <button id="list"><a href="{% url "quote_list" %}">My Quotes</a></button>
+        <img id="results" src="{% static "Results.png" %}" height="350" width="500">
+    </div>
+    <div class="right-box">
+    <button id="create"><a href="{% url "select_model" %}"> Create a New Quote </a></button>
+    <img id="pie-chart" src="{% static "popular_models.png" %}" height="350" width="500">
+    </div>
+  </body>
+    {%else%}
+    <h1 id="anon-welcome">Welcome to My MRP!</h1>
+    {% endif %}
+    <footer>
+      <button id="about_us_button"><a href="{% url "about_us" %}"> Meet the DEV Team </a></button>
+    </footer>
+
+  {% endblock %}

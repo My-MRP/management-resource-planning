@@ -1,0 +1,13 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+
+<div class="django-form exterior-add container">
+  <h2>Add New Exterior Color</h2>
+  <form class="exterior-add-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Color</button>
+  </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+
+<div class="django-form engine-add container">
+  <h2>Add New Engine</h2>
+  <form class="engine-add-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Engine</button>
+  </form>
+</div>
+{% endblock content %}

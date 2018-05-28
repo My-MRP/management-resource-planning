@@ -1,0 +1,13 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+
+<div class="django-form audio-add container">
+  <h2>Add New Audio System</h2>
+  <form class="audio-add-form" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Audio System</button>
+  </form>
+</div>
+{% endblock content %}
