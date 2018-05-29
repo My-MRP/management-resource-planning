@@ -26,6 +26,12 @@
     right: 40px;
 }
 
+#results {
+    position: absolute;
+    left: 70px;
+    top: 60px;
+}
+
 #logged-out {
     position: absolute;
     top: 42px;
